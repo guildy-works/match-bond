@@ -1,0 +1,32 @@
+.viewMore {
+    position: relative;
+    padding: 2.4rem;
+    padding-bottom: 1.4rem;
+    padding-top: 0.6rem;
+    @apply bg-color5 rounded-lg;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    text-align: left;
+    transition: all 0.2s;
+    box-sizing: border-box;
+    color: #212121;
+    text-align: center;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 34px;
+        height: 5px;
+        left: 0;
+        right: 0;
+        bottom: 1rem;
+        margin: auto;
+        background: url(/Arrow.svg) 0 0 no-repeat;
+        background-size: 34px 4.6px;
+        transition: all 0.3s;
+    }
+
+    &:hover::after {
+        left: 1rem;
+    }
+}
