@@ -10,7 +10,7 @@ import { ServiceDialog } from "@/components/ServiceDialog";
 import Image from 'next-export-optimize-images/picture';
 import { StaticImageData } from 'next/image';
 
-import ThreeMonthPlan from '@/assets/3month_plan.png'
+import Plan from '@/assets/plan.jpg'
 import Jba from '@/assets/jba.png';
 import Oaite from '@/assets/oaite.png';
 import Photo from '@/assets/photo.png';
@@ -111,7 +111,8 @@ const Section2 = () => {
                     <FadeAndSlideScrollTriggerAnimation innerClassName='h-full'>
                         <PricingPlan
                             title='3ヵ月お試しプラン'
-                            image={ThreeMonthPlan}
+                            image={Plan}
+                            disableButton
                             description='相談所って好みの人いるのかな。お見合いって本当に組めるのかな。と不安に思う方にお勧めです。'
                         />
                     </FadeAndSlideScrollTriggerAnimation>
@@ -119,7 +120,8 @@ const Section2 = () => {
                     <FadeAndSlideScrollTriggerAnimation delay={60} innerClassName='h-full'>
                         <PricingPlan
                             title='月会費￥0プラン'
-                            image={ThreeMonthPlan}
+                            image={Plan}
+                            disableButton
                             description='仕事が忙しくて今月お見合いを組めないかもしれないな。と、お仕事に波がある方にお勧めです。'
                         />
                     </FadeAndSlideScrollTriggerAnimation>
@@ -127,12 +129,19 @@ const Section2 = () => {
                     <FadeAndSlideScrollTriggerAnimation delay={120} innerClassName='h-full'>
                         <PricingPlan
                             title='お見合い費￥0プラン'
-                            image={ThreeMonthPlan}
+                            image={Plan}
+                            disableButton
                             description='沢山の方とのお見合いを経て、「この人だ。」と思えるお相手を探したい方にお勧めのプランです。'
                         />
                     </FadeAndSlideScrollTriggerAnimation>
+                </div>
 
-
+                <div className="mx-auto py-8 w-36">
+                    <ServiceDialog  >
+                        <div className='w-full p-4'>
+                            <Image src={Plan} alt="料金表" />
+                        </div>
+                    </ServiceDialog>
                 </div>
 
                 <Glossary />
@@ -315,7 +324,7 @@ const Section5 = () => {
                         <PricingPlan
                             title='お悩み相談'
                             disableButton
-                            image={ThreeMonthPlan}
+                            image={Plan}
                             description='恋愛・婚活・結婚後・夫婦関係・子育てについての相談を受け付けます。'
                         />
                     </FadeAndSlideScrollTriggerAnimation>
@@ -324,7 +333,7 @@ const Section5 = () => {
                         <PricingPlan
                             title='恋愛コーチング'
                             disableButton
-                            image={ThreeMonthPlan}
+                            image={Plan}
                             description='お客様の想いを明確にし、目標を設定、やるべき行動をお伝えします。'
                         />
                     </FadeAndSlideScrollTriggerAnimation>
@@ -333,7 +342,7 @@ const Section5 = () => {
                         <PricingPlan
                             title='恋愛タロット占い'
                             disableButton
-                            image={ThreeMonthPlan}
+                            image={Plan}
                             description='恋愛タロット占いで楽しく未来を占いましょう。'
                         />
                     </FadeAndSlideScrollTriggerAnimation>
