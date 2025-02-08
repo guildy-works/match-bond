@@ -382,7 +382,7 @@ const Section4 = () => {
     return (
         <SectionType1 className="w-full bg-color1 py-8 md:py-24" innerClassName="flex flex-col items-center">
             <TitleType title="婚活イベント" subTitle="Events" ancher="events" />
-            <div className="flex flex-col gap-8 mt-auto" >
+            <div className="flex flex-col gap-8 mt-8" >
                 <FadeAndSlideScrollTriggerAnimation  >
                     Match-Bondの婚活イベントは<HighlightMarker> マッチング率96%</HighlightMarker>（2024年10月時点）です。<br />
                     婚活イベントは最初に最大の難関が待ち構えています。<br />
