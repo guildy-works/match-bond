@@ -1,54 +1,29 @@
-import React, { CSSProperties, ElementType, ReactNode } from "react";
-import { ScrollTrigger } from "../ScrollTrigger/ScrollTrigger";
-import { FadeAndSlideAnimation } from "../Animations/FadeAndSlideAnimation";
-
-type Transform = {
-    translate?: {
-        x?: string;
-        y?: string;
-    }
-    rotate?: string;
-    scale?: number;
-    // eslint-disable-next-line @typescript-eslint/ban-types
-    transformOrigin?: "bottom" | "center" | "left" | "right" | "top" | (string & {});
-    opacity?: number;
-}
+import React, { CSSProperties, ElementType, ReactNode, useRef } from "react";
+import { DOMMotionComponents, motion, useInView } from "motion/react"
 
 interface FadeAndSlideScrollTriggerAnimationProps {
     children: ReactNode;
     delay?: number;
-    forceIn?: boolean;
-    transform?: Transform
-    transformTo?: Transform
     style?: CSSProperties;
     className?: string;
-    innerClassName?: string;
-    innerStyle?: CSSProperties;
-    tag?: ElementType;
 }
 
-export const FadeAndSlideScrollTriggerAnimation = ({ tag, children, delay, forceIn, transform, style, className, innerClassName, innerStyle, transformTo }: FadeAndSlideScrollTriggerAnimationProps) => {
+export const FadeAndSlideScrollTriggerAnimation = ({
+    children,
+    delay,
+    style,
+    className,
+}: FadeAndSlideScrollTriggerAnimationProps) => {
     return (
-        <ScrollTrigger
-            forceIn={forceIn}
-            delay={delay}
-            once
+        <motion.div
+            viewport={{ once: true }}
             style={style}
             className={className}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, delay: (delay ?? 0.2) }}
         >
-            {state =>
-                <FadeAndSlideAnimation
-                    tag={tag}
-                    in={state.triggered}
-                    delay={delay}
-                    transform={transform}
-                    transformTo={transformTo}
-                    style={innerStyle}
-                    className={innerClassName}
-                >
-                    {children}
-                </FadeAndSlideAnimation>
-            }
-        </ScrollTrigger>
+            {children}
+        </motion.div>
     );
 };

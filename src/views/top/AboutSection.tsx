@@ -13,14 +13,14 @@ import Img1 from "@/assets/img1.png";
 import About1 from "@/assets/about1.png";
 import About2 from "@/assets/about2.png";
 import Illust from "@/assets/illust.png";
-
+import { DOMMotionComponents, motion, useInView } from "motion/react"
 import Img2 from "@/assets/img2.png";
 import { AboutHeqading } from "@/components/AboutHeading";
 import clsx from "clsx";
 
 export default function AboutSection() {
     return (
-        <section className="w-full relative -mt-24 sm:mt-0 bg-color12/20">
+        <section className="w-full relative -mt-24 sm:mt-0 bg-color12/10">
             <div className="w-100vw sm:w-[70vw] absolute inset-0 bg-color12_2 -z-10 rounded-t-3xl sm:rounded-tr-3xl" />
 
             <div className="max-w-5xl grid md:grid-cols-2 mx-auto gap-3 items-center">
@@ -29,24 +29,28 @@ export default function AboutSection() {
                         <TitleType ancher="" title="代表　山本夢翔" subTitle="Yumeka Yamamoto" />
                     </FadeAndSlideScrollTriggerAnimation>
 
-                    <FadeAndSlideScrollTriggerAnimation tag="h3"
+                    <FadeAndSlideScrollTriggerAnimation
                         className="mt-3 sm:mt-5 md:mt-7 text-title4 text-color10">
                         Match-Bondのホームページにご訪問いただき、<br />
                         誠にありがとうございます。
                     </FadeAndSlideScrollTriggerAnimation>
 
                     <FadeAndSlideScrollTriggerAnimation
-                        tag="p"
-                        innerClassName="mt-3 sm:mt-5 md:mt-7 text-title4 text-color10 text-color10">
+
+                        className="mt-3 sm:mt-5 md:mt-7 text-title4 text-color10">
                         Match-Bond代表の山本夢翔です。
                     </FadeAndSlideScrollTriggerAnimation>
                 </div>
 
                 <div className="px-8 -mt-12 md:my-auto">
-                    <FadeAndSlideScrollTriggerAnimation innerClassName="rounded-sm overflow-hidden" 
-                    transform={{ translate: { y: "60px", }, scale: 1.2 }}>
-                        <Image src={Profile} alt="img" className="translate-y-12"/>
-                    </FadeAndSlideScrollTriggerAnimation>
+                    <motion.div className="rounded-sm overflow-hidden"
+                        viewport={{ once: true }}
+                        initial={{ translateY: "60px", scale: 1.2 }}
+                        whileInView={{ translateY: 0, scale: 1 }}
+                        transition={{ duration: 0.4, delay: 0.2 }}
+                    >
+                        <Image src={Profile} alt="img" className="translate-y-12" />
+                    </motion.div>
                 </div>
             </div>
 
@@ -57,7 +61,7 @@ export default function AboutSection() {
                         title="自己紹介"
                         num="01"
                         className="bg-color9_2"
-                        imageSection={<TransitionImage src={About1} alt="about1" className="w-full rounded-xl" parallaxSlideLength={20} baseScale={1.1} />}
+                        imageSection={<TransitionImage imageData={About1} alt="about1" className="w-full rounded-xl" parallaxSlideLength={20} baseScale={1.1} />}
                     >
                         簡単に私の自己紹介をさせてください。<br />
                         1997年10月17日生まれ、生粋のO型です。<br />
@@ -74,7 +78,7 @@ export default function AboutSection() {
                         title="社会人サークル"
                         num="02"
                         className="bg-color6 text-color10"
-                        imageSection={<TransitionImage src={About2} alt="about2" className="w-full rounded-xl" parallaxSlideLength={20} baseScale={1.1} />}
+                        imageSection={<TransitionImage imageData={About2} alt="about2" className="w-full rounded-xl" parallaxSlideLength={20} baseScale={1.1} />}
                     >
                         想像以上に社会人サークルの良さを感じたため、自分で福山市中心の社会人サークルを設立しました。<br />
                         社会人サークルを運営していると、遊びに来てくれる人が自然とカップルになることがありました。<br />
@@ -85,20 +89,23 @@ export default function AboutSection() {
                         title="結婚相談所"
                         num="03"
                         className="bg-color12 text-color10"
-                        imageSection={<TransitionImage src={Img1} alt="about2" className="w-full rounded-xl " parallaxSlideLength={20} baseScale={1.1} />}
+                        imageSection={<TransitionImage imageData={Img1} alt="about2" className="w-full rounded-xl " parallaxSlideLength={20} baseScale={1.1} />}
                     >
                         結婚相談所を起業するために、福山市の結婚相談所を6か所周り、市場調査をしました。<br />
                         すると、自分だったら入会できない価格設定に驚愕しました。<br />
                         もっと、お客様に寄り添った結婚相談所にしなければ！と思い、Match-Bondができました。
                     </FeatureCard>
 
-                    <FadeAndSlideScrollTriggerAnimation transform={{ opacity: 1, translate: { y: "80px" }, scale: 1.1 }}
-                        innerClassName="space-y-8 mb-0 p-12 -mt-12 rounded-t-3xl bg-color6 text-color10 flex flex-col">
+                    <motion.div
+                        viewport={{ once: true }}
+                        initial={{  translateY: "80px", scale: 1.1 }}
+                        whileInView={{  translateY: 0, scale: 1 }}
+                        transition={{ duration: 0.4, delay: 0.2 }}
+                        className="space-y-8 mb-0 p-12 -mt-12 rounded-t-3xl bg-color6 text-color10 flex flex-col">
                         <div className="flex flex-col justify-center md:p-8 gap-4">
                             <AboutHeqading num="04" title="サービス" />
-                            <FadeAndSlideScrollTriggerAnimation tag="p"
-                                className="space-y-2 mt-3 sm:mt-5 md:mt-7 text-size2"
-                                innerClassName="flex flex-col"
+                            <FadeAndSlideScrollTriggerAnimation
+                                className="space-y-2 mt-3 sm:mt-5 md:mt-7 text-size2 flex flex-col"
                             >
                                 Match-Bondはお客様のために、大きく分けて2つのサービスを提供します。<br />
                                 1つ目は福山市近辺のお店に協力してもらうことで、<br />
@@ -125,13 +132,13 @@ export default function AboutSection() {
                             </FadeAndSlideScrollTriggerAnimation>
                         </div>
                         <Image src={Illust} alt="婚活を支援する企業になりませんか?" className="w-full max-w-screen-sm mx-auto" />
-                    </FadeAndSlideScrollTriggerAnimation>
+                    </motion.div>
 
                     <FeatureCard
                         title="結婚について"
                         num="05"
                         className="bg-color9_2"
-                        imageSection={<TransitionImage src={Img2} alt="about2" className="w-full rounded-xl" parallaxSlideLength={20} baseScale={1.1} />}
+                        imageSection={<TransitionImage imageData={Img2} alt="about2" className="w-full rounded-xl" parallaxSlideLength={20} baseScale={1.1} />}
                     >
                         令和元年以降3万組以上の結婚する人が減少しています。<br />
                         様々な情報から、「結婚はしない方いい」と思っている人が多いのではないかと思います。<br />
@@ -142,8 +149,12 @@ export default function AboutSection() {
                         こんな幸せを実感しないなんて勿体ないです！
                     </FeatureCard>
 
-                    <FadeAndSlideScrollTriggerAnimation transform={{ opacity: 1, translate: { y: "40px" }, scale: 1.1 }}
-                        innerClassName="space-y-8 p-12 -mt-12 rounded-t-3xl  bg-color6 text-color10">
+                    <motion.div
+                        viewport={{ once: true }}
+                        initial={{ translateY: "40px", scale: 1.1 }}
+                        whileInView={{  translateY: 0, scale: 1 }}
+                        transition={{ duration: 0.4, delay: 0.2 }}
+                        className="space-y-8 p-12 -mt-12 rounded-t-3xl  bg-color6 text-color10">
                         <div className="flex flex-col justify-center md:p-8 gap-4">
                             <AboutHeqading num="06" title="企業理念" />
                             <FadeAndSlideScrollTriggerAnimation
@@ -165,7 +176,7 @@ export default function AboutSection() {
                             </FadeAndSlideScrollTriggerAnimation>
                         </div>
 
-                    </FadeAndSlideScrollTriggerAnimation>
+                    </motion.div>
                 </div>
             </div>
         </section>
@@ -174,17 +185,21 @@ export default function AboutSection() {
 
 const FeatureCard = ({ children, title, imageSection, className, num }: { num: string, className?: string, children: React.ReactNode, title: string, imageSection: React.ReactNode }) => {
     return (
-        <FadeAndSlideScrollTriggerAnimation transform={{ opacity: 1, translate: { y: "40px" }, scale: 1.1 }}
-            innerClassName={clsx("space-y-8 p-8 md:p-16 pt-12 pb-24 -mt-12 rounded-t-3xl grid md:grid-cols-2", className)}>
+        <motion.div
+            viewport={{ once: true }}
+            initial={{ translateY: "40px", scale: 1.1 }}
+            whileInView={{ translateY: 0, scale: 1 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className={clsx("space-y-8 p-8 md:p-16 pt-12 pb-24 -mt-12 rounded-t-3xl grid md:grid-cols-2", className)}>
             <div className="flex flex-col justify-center md:p-8 gap-4">
                 <AboutHeqading num={num} title={title} />
-                <FadeAndSlideScrollTriggerAnimation tag="p"
+                <FadeAndSlideScrollTriggerAnimation
                     className="space-y-2 mt-3 sm:mt-5 md:mt-7 text-size2 "
                 >
                     {children}
                 </FadeAndSlideScrollTriggerAnimation>
             </div>
             {imageSection}
-        </FadeAndSlideScrollTriggerAnimation>
+        </motion.div>
     )
 }

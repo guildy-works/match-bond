@@ -3,11 +3,11 @@ import Link from "next/link";
 import { Description, Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
 import { MdClose, MdMenu } from 'react-icons/md';
 import { SnsLinkList } from '@/components/SnsLinkList';
-import { FadeAndSlideAnimation } from '@/libs/Animations/FadeAndSlideAnimation';
 import Logo from "@/assets/logo.png";
 import Image from 'next-export-optimize-images/picture';
+import { useScroll } from 'motion/react';
+import { FadeAndSlideScrollTriggerAnimation } from '@/libs/ScrollTriggerAnimations/FadeAndSlideScrollTriggerAnimation';
 
-import { useScrollState } from '@/libs/ScrollTrigger';
 
 type MenuItem = {
     href: string;
@@ -25,19 +25,20 @@ export const menuItems = [
         ]
     },
     { href: "/#mariage", label: "結婚相談所", },
+    { href: "/#plan", label: "料金プラン", },
     { href: "/#events", label: "婚活イベント", },
     { href: "/#contacts", label: "お問い合わせ" },
 ];
 
 export const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const state = useScrollState()
+    const state = useScroll()
 
     return (
         <>
             <header className="flex items-center sticky top-0 mt-0 bg-white/60 backdrop-blur-lg z-20">
                 <Link href="/">
-                    <h1 className='font-slight ml-3 text-color3 text-[26px] font-extralight whitespace-nowrap'>Match Bond</h1>
+                    <h1 className='font-slight ml-3 text-color3 text-[26px] font-normal whitespace-nowrap outline-none'>Match Bond</h1>
                 </Link>
 
                 {/* Desktop */}
@@ -112,7 +113,7 @@ const Drawer = ({ isOpen, setIsOpen, children }: React.PropsWithChildren<Props>)
 
                     <nav className="flex flex-col gap-6 h-full justify-center items-start">
                         {menuItems.map((item, index) => (
-                            <FadeAndSlideAnimation in key={item.href} delay={index * 50} className="flex flex-col gap-4">
+                            <FadeAndSlideScrollTriggerAnimation key={item.href} delay={index * 0.01} className="flex flex-col gap-4">
                                 <Link
                                     onClick={() => setIsOpen(false)}
                                     key={index}
@@ -137,7 +138,7 @@ const Drawer = ({ isOpen, setIsOpen, children }: React.PropsWithChildren<Props>)
                                         )
                                     )
                                 }
-                            </FadeAndSlideAnimation>
+                            </FadeAndSlideScrollTriggerAnimation>
                         ))}
                     </nav>
                     <Image className="mb-8" src={Logo} alt="Match-Bond" width={120} height={120} loading="lazy" />

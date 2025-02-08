@@ -1,8 +1,6 @@
 "use client";
 
 import "./globals.scss";
-import { ScrollContainer, ScrollTrigger } from "@/libs/ScrollTrigger";
-import Link from "next/link";
 import { Header, menuItems } from "./Header";
 
 import '@splidejs/react-splide/css';
@@ -41,16 +39,12 @@ export default function RootLayout({
                 </Script>
             </head>
 
-            <body>
-                <ScrollContainer className="flex min-h-screen flex-col h-svh relative">
-                    <Header />
-                    <main>
-                        {children}
-                    </main>
-                    <Footer />
-                </ScrollContainer>
-
-
+            <body className="flex min-h-screen flex-col">
+                <Header />
+                <main>
+                    {children}
+                </main>
+                <Footer />
             </body>
         </html>
     );

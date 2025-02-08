@@ -1,17 +1,19 @@
-import { ScrollTrigger } from "../ScrollTrigger";
 import clsx from "clsx";
 import type { CSSProperties, ReactNode } from "react";
 import React from "react";
-
-import Image from 'next-export-optimize-images/picture';
-import { StaticImageData } from 'next/image';
+import css from "./AnimatedImage.module.scss";
+import { motion, useInView, useMotionValueEvent, useScroll } from "motion/react";
+import Image from "next-export-optimize-images/picture";
+import { StaticImageData } from "next/image";
 
 export const lerp = (x: number, y: number, t: number) => {
     return (1 - t) * x + t * y;
 };
 
 interface TransitionImageProps {
-    src: StaticImageData;
+    src?: string;
+
+    imageData?: StaticImageData
     alt: string;
     parallaxSlideLength?: number;
     scale?: {
@@ -24,110 +26,78 @@ interface TransitionImageProps {
     imgClassName?: string;
 }
 
+const defaultBaseScale = 1.2;
+
 export const TransitionImage = (props: TransitionImageProps) => {
     const { scale } = props;
-    const range = Math.abs(props.parallaxSlideLength ?? 80);
+    const range = Math.abs(props.parallaxSlideLength ?? 40);
     const half = range * 0.5;
     const getPosition = (t: number) => lerp(-half, half, t);
     const getScale = (t: number) => lerp(
-        scale?.from ?? 0.97,
-        scale?.to ?? 1,
+        scale?.from ?? 1.1,
+        scale?.to ?? 1.05,
         t
     );
 
+    const element = React.useRef<HTMLDivElement>(null);
+
+    const { scrollYProgress } = useScroll({ target: element, offset: ["start end", "end start"] });
+    const [position, setPosition] = React.useState(0)
+    const [domScale, setScale] = React.useState(props.baseScale ?? defaultBaseScale)
+    useMotionValueEvent(scrollYProgress, "change", (progress) => {
+        setPosition(getPosition(progress))
+        setScale(getScale(progress))
+    })
+
     return (
-        <ScrollTrigger
-            once
-            scrollEndOffset={"100% + 40vh"}
-            scrollStartOffset="-20vh"
+        <motion.div
+            ref={element}
             style={props.style}
-
             className={clsx("overflow-hidden relative", props.className)}
+            viewport={{ once: true }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
         >
-            {
-                ( info) => <>
-                    <div
-                        className="size-full"
-                    >
-                        <div style={{
-                            height: `calc(100% + ${range}px)`,
-                            width: "100%",
-                            opacity: info.triggered ? 1 : 0,
-                            transition: "all 1.5s cubic-bezier(0.13, 0.59, 0.01, 0.98)",
-                            transform: info.triggered? `translateY(${getPosition(info.scrollProgress)}px) scale(${getScale(info.scrollProgress)})` : "",
-                        }}>
-                            <Image
-                                alt={props.alt}
-                                src={props.src}
-                                loading="lazy"
-                                style={{
-                                    height: "100%",
-                                    width: "100%",
-                                    objectFit: "cover",
-                                    transition: "all 2.4s cubic-bezier(0.51, 0.15, 0.25, 0.97)",
-                                    transform: info.triggered ? "scale(1.3)" : "scale(1.5)",
-                                }}
-                            />
-                        </div>
-
-                        {/* {<div className={clsx(css.shutter2, state === "entered" ? css.animate2 : "")} />}
-                        {<div className={clsx(css.shutter, state === "entered" ? css.animate : "")} />} */}
-                    </div>
-                </>
-            }
-        </ScrollTrigger>
-    );
-};
-
-export interface TransitionStaticImageProps {
-    children: (style: CSSProperties) => ReactNode;
-    parallaxSlideLength?: number;
-    className?: string;
-    style?: CSSProperties;
-}
-
-export const TransitionStaticImage = (props: TransitionStaticImageProps) => {
-    const range = Math.abs(props.parallaxSlideLength ?? 50);
-    const half = range * 0.5;
-    const getPosition = (t: number) => lerp(-half, half, t);
-    const getScale = (t: number) => lerp(0.97, 1, t);
-
-    return (
-        <ScrollTrigger
-            once
-            scrollEndOffset={"100% + 40vh"}
-            scrollStartOffset="-20vh"
-            style={{ ...props.style, height: "100%" }}
-            className={props.className}
-        >
-            {
-                (info) => <>
-                    <div style={{
-                        transition: "all 3s cubic-bezier(0.51, 0.15, 0.25, 0.97)",
-                        opacity: info.triggered ? 1 : 0,
-                        position: "relative",
-                        overflow: "hidden",
-                        width: "100%",
-                        height: "100%",
-                        transform:info.triggered ? "translateY(0)" : "translateY(30px)",
-                    }}>
-                        <div style={{
-                            height: `calc(100% + ${range}px)`,
-                            width: "100%",
-                            transition: "all 1.5s cubic-bezier(0.13, 0.59, 0.01, 0.98)",
-                            transform: info.triggered ? `translateY(${getPosition(info.scrollProgress)}px) scale(${getScale(info.scrollProgress)})` : "",
-                        }}>
-                            {props.children({
+            <motion.div
+                transition={{ duration: 0.3 }}
+                initial={{ translateY: 0, scale: props.baseScale ?? defaultBaseScale }}
+                animate={{
+                    translateY: position + "px",
+                    scale: domScale
+                }}
+                style={{
+                    height: `calc(100% + ${range}px)`,
+                    width: "100%",
+                }}>
+                {
+                    props.imageData
+                        ? <Image
+                            alt={props.alt}
+                            src={props.imageData}
+                            loading={'eager'}
+                            style={{
                                 height: "100%",
                                 width: "100%",
                                 objectFit: "cover",
-                                transition: "all 2.4s cubic-bezier(0.51, 0.15, 0.25, 0.97)",
-                                transform: info.triggered ? "scale(1.3)" : "scale(1.5)",
-                            })}
-                        </div>
-                    </div>
-                </>
-            }
-        </ScrollTrigger>
+                            }}
+                        />
+                        : <img
+                            src={props.src}
+                            alt={props.alt}
+                            className={props.imgClassName}
+                            style={{
+                                height: "100%",
+                                width: "100%",
+                                objectFit: "cover",
+                            }}
+                        />
+
+                }
+            </motion.div>
+
+            {/* {<div className={clsx(css.shutter2, info.triggered ? css.animate2 : "")} />}
+                        {<div className={clsx(css.shutter, info.triggered ? css.animate : "")} />} */}
+
+        </motion.div>
     );
 };

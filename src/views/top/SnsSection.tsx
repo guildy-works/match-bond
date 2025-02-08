@@ -8,7 +8,7 @@ import Script from "next/script";
 
 export const SnsSection = () => {
     return (
-        <div className="mx-auto px-8 w-full max-w-6xl flex flex-col items-center space-y-8 mt-8 relative">
+        <div className="overflow-hidden mx-auto px-8 w-full max-w-6xl flex flex-col items-center space-y-8 mt-8 relative">
             <div id="sns" className="absolute -top-32" />
 
             <SectionBar text="Sns" />
@@ -17,7 +17,7 @@ export const SnsSection = () => {
 
             <div className="relative">
                 {/* 背景テキスト */}
-                <div className="font-slight absolute top-32 left-0 right-0 text-[80px] w-[820px] text-color9/20 -rotate-12 ">
+                <div className="font-slight absolute top-32 left-0 right-0 text-[80px] w-[820px] font-normal text-color9/20 -rotate-12 ">
                     Match-Bond
                 </div>
                 <FadeAndSlideScrollTriggerAnimation>

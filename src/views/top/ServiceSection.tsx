@@ -2,7 +2,7 @@
 import { LinkButton } from "@/components/LinkButton";
 import { TitleType, TitleType2 } from "@/components/Titles";
 import { FadeAndSlideScrollTriggerAnimation } from "@/libs/ScrollTriggerAnimations/FadeAndSlideScrollTriggerAnimation";
-import mariage1 from "@/assets/mariage1.png";
+import mariage1 from "@/assets/mariage1.jpg";
 import mariage2 from "@/assets/mariage2.png";
 import { TransitionImage } from "@/libs/ScrollTriggerAnimations/TransitionImage";
 import { ServiceDialog } from "@/components/ServiceDialog";
@@ -61,27 +61,27 @@ const Glossary = () => {
                     />
                     <GlossaryItem
                         term="登録費"
-                        delay={20}
+                        delay={0.01}
                         description="登録するためにかかる費用"
                     />
                     <GlossaryItem
                         term="月会費"
-                        delay={40}
+                        delay={0.02}
                         description="結婚相談所の使用料（毎月）"
                     />
                     <GlossaryItem
                         term="お見合い費"
-                        delay={60}
+                        delay={0.03}
                         description="お見合いが成立した際にかかる費用"
                     />
                     <GlossaryItem
-                        delay={80}
+                        delay={0.04}
                         term="本交際"
                         description="交際する人を1名に決めること"
                     />
                     <GlossaryItem
                         term="成婚退会"
-                        delay={100}
+                        delay={0.05}
                         description="本交際で決めた人といっしょに退会すること"
                     />
                 </div>
@@ -92,7 +92,7 @@ const Glossary = () => {
 
 const GlossaryItem = ({ term, description, delay }: any) => {
     return (
-        <FadeAndSlideScrollTriggerAnimation delay={delay} className="h-full" innerClassName="h-full p-3 bg-gray-50 rounded-lg border border-gray-200">
+        <FadeAndSlideScrollTriggerAnimation delay={delay} className="h-full p-3 bg-gray-50 rounded-lg border border-gray-200">
             <h2 className="text-size2 font-semibold text-color9">{term}</h2>
             <p className="text-gray-600 mt-1 text-size3">{description}</p>
         </FadeAndSlideScrollTriggerAnimation>
@@ -101,37 +101,50 @@ const GlossaryItem = ({ term, description, delay }: any) => {
 
 const Section2 = () => {
     return (
-        <div className="w-full bg-color1  p-8 sm:p-16">
+        <div className="w-full bg-color1  p-8 sm:p-16 relative">
+            <div id="plan" className="absolute -top-32" />
+
             <div className='max-w-6xl mx-auto py-8 flex flex-col'>
                 <FadeAndSlideScrollTriggerAnimation className="mx-auto mt-6">
                     <TitleType ancher="" title="料金プラン" subTitle="Plans" className="mx-auto" />
                 </FadeAndSlideScrollTriggerAnimation>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
-                    <FadeAndSlideScrollTriggerAnimation innerClassName='h-full'>
+                    <FadeAndSlideScrollTriggerAnimation className='h-full'>
                         <PricingPlan
                             title='3ヵ月お試しプラン'
                             image={Plan}
                             disableButton
-                            description='相談所って好みの人いるのかな。お見合いって本当に組めるのかな。と不安に思う方にお勧めです。'
+                            description={<>
+                                相談所って好みの人いるのかな。<br />
+                                お見合いって本当に組めるのかな。<br />
+                                と不安に思う方にお勧めです。
+                            </>}
                         />
                     </FadeAndSlideScrollTriggerAnimation>
 
-                    <FadeAndSlideScrollTriggerAnimation delay={60} innerClassName='h-full'>
+                    <FadeAndSlideScrollTriggerAnimation delay={0.02} className='h-full'>
                         <PricingPlan
                             title='月会費￥0プラン'
                             image={Plan}
                             disableButton
-                            description='仕事が忙しくて今月お見合いを組めないかもしれないな。と、お仕事に波がある方にお勧めです。'
+                            description={<>
+                                「仕事が忙しくて今月お見合いを組めないかもしれないな。」<br />
+                                と、お仕事に波がある方にお勧めです。<br />
+                            </>}
                         />
                     </FadeAndSlideScrollTriggerAnimation>
 
-                    <FadeAndSlideScrollTriggerAnimation delay={120} innerClassName='h-full'>
+                    <FadeAndSlideScrollTriggerAnimation delay={0.04} className='h-full'>
                         <PricingPlan
                             title='お見合い費￥0プラン'
                             image={Plan}
                             disableButton
-                            description='沢山の方とのお見合いを経て、「この人だ。」と思えるお相手を探したい方にお勧めのプランです。'
+                            description={<>
+                                沢山の方とのお見合いを経て、<br />
+                                「この人だ。」と思えるお相手を<br />
+                                探したい方にお勧めのプランです。<br />
+                            </>}
                         />
                     </FadeAndSlideScrollTriggerAnimation>
                 </div>
@@ -153,7 +166,7 @@ const Section2 = () => {
 
 const Section3 = () => {
     return (
-        <div className="w-full mt-24 md:mt-48 bg-color1 flex flex-col items-center">
+        <div className="w-full mt-24 bg-color1 flex flex-col items-center">
             <TitleType title="結婚相談所"
                 ancher="mariage"
                 subTitle="Service"
@@ -161,7 +174,7 @@ const Section3 = () => {
             {/* 背景パネル */}
             <div className="max-w-screen-md grid md:grid-cols-2 mx-auto gap-3 ">
                 <div className="flex flex-col gap-8 p-8 sm:p-16 !pb-0 mt-auto items-center">
-                    <FadeAndSlideScrollTriggerAnimation innerClassName="items-start" >
+                    <FadeAndSlideScrollTriggerAnimation className="items-start" >
                         Match-Bondの結婚相談所は<br />
                         入会金・登録費といった<HighlightMarker> 初期費用が0円！</HighlightMarker><br />
                         月会費無料プランを選ぶと<HighlightMarker> 月会費も0円！</HighlightMarker><br />
@@ -216,7 +229,7 @@ const Section6 = () => {
                 <TitleType ancher="reviews" title="お客様の声" subTitle="Reviews" />
                 <LinkButton href="https://g.co/kgs/CJDKC7U" title="Google口コミはこちら" ></LinkButton>
 
-                <FadeAndSlideScrollTriggerAnimation tag="h3" >
+                <FadeAndSlideScrollTriggerAnimation  >
                     Instagram／LINEに届いたお客様の声
                 </FadeAndSlideScrollTriggerAnimation>
             </div>
@@ -240,12 +253,12 @@ const Section6 = () => {
 
 const Section1 = () => {
     return (
-        <div className="w-full mt-24 md:mt-48">
+        <div className="w-full mt-24">
             {/* 背景パネル */}
             <div className="relative max-w-screen-lg grid md:grid-cols-2 py-24 mx-auto gap-3">
-                <div className="w-[100vw] absolute inset-0 md:top-60 bg-[#f5ece7] -z-10" />
+                <div className="w-[100vw] absolute inset-0 md:top-60 bg-[#f5ece7]" />
 
-                <div className="flex flex-col gap-8 p-8 sm:px-24 sm:pt-48 mt-auto items-center" >
+                <div className="flex flex-col gap-8 p-8 sm:px-24 sm:pt-48 mt-auto items-center z-10" >
                     <TitleType title="どんな婚活サポート？" subTitle="Service" ancher="support" />
 
                     <FadeAndSlideScrollTriggerAnimation className="w-full" >
@@ -265,7 +278,7 @@ const Section1 = () => {
                         そして、結婚後は結婚指輪、結婚フォト、結婚式など大きな出費があります。<br />
                     </FadeAndSlideScrollTriggerAnimation>
 
-                    <TransitionImage alt="私たちの想い" src={mariage1} className="sm:hidden rounded-md mt-auto" />
+                    <TransitionImage alt="私たちの想い" imageData={mariage1} className="sm:hidden rounded-md mt-auto" />
 
                     <FadeAndSlideScrollTriggerAnimation className="w-full" >
                         この大きな出費も軽減することができます。
@@ -291,12 +304,19 @@ const Section1 = () => {
                         <LinkButton href="/services#service2" title="成婚退会後にお得なサービスが受けれるお店はコチラ" className="w-full" innerClassName="!px-0" />
                     </div>
 
-                    <p>※お得なサービスはMatch-Bondの結婚相談所に入会した場合のみご利用頂けます。</p>
+                    <div className="flex text-font3/80">
+                        <span className="text-size3 font-bold leading-4"> ※</span>
+                        <p className="text-size3 font-bold leading-4 ml-1">
+                            お得なサービスはMatch-Bondの結婚相談所に<br />
+                            入会した場合のみご利用頂けます。
+                        </p>
+                    </div>
+
                 </div>
 
                 <div className="px-8 my-auto flex flex-col gap-8 h-full">
-                    <TransitionImage alt="私たちの想い" src={mariage1} className="hidden sm:block rounded-md mt-auto" />
-                    <TransitionImage alt="私たちの想い" src={mariage2} className="rounded-md" />
+                    <TransitionImage alt="私たちの想い" imageData={mariage1} className="hidden sm:block rounded-md mt-auto" />
+                    <TransitionImage alt="私たちの想い" imageData={mariage2} className="rounded-md" />
                 </div>
             </div>
         </div>
@@ -308,7 +328,7 @@ const Section5 = () => {
         <SectionType1 className="w-full bg-color1 py-8 md:py-24" innerClassName="flex flex-col items-center">
             <TitleType ancher="consultants" title="恋愛・お悩み相談窓口" subTitle="Consultants" />
 
-            <FadeAndSlideScrollTriggerAnimation tag="p" className="mt-8" innerClassName="w-full">
+            <FadeAndSlideScrollTriggerAnimation className="mx-auto mt-8">
                 Match-Bondの恋愛相談窓口は<br />
                 「恋愛」「婚活」「結婚後」「夫婦関係」「子育て」<br />
                 についてのお悩みを受け付けています。<br /><br />
@@ -320,7 +340,7 @@ const Section5 = () => {
 
             <div className='max-w-6xl mx-auto mt-8'>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <FadeAndSlideScrollTriggerAnimation innerClassName='h-full'>
+                    <FadeAndSlideScrollTriggerAnimation className='h-full'>
                         <PricingPlan
                             title='お悩み相談'
                             disableButton
@@ -329,7 +349,7 @@ const Section5 = () => {
                         />
                     </FadeAndSlideScrollTriggerAnimation>
 
-                    <FadeAndSlideScrollTriggerAnimation delay={60} innerClassName='h-full'>
+                    <FadeAndSlideScrollTriggerAnimation delay={0.06} className='h-full'>
                         <PricingPlan
                             title='恋愛コーチング'
                             disableButton
@@ -338,7 +358,7 @@ const Section5 = () => {
                         />
                     </FadeAndSlideScrollTriggerAnimation>
 
-                    <FadeAndSlideScrollTriggerAnimation delay={120} innerClassName='h-full'>
+                    <FadeAndSlideScrollTriggerAnimation delay={0.08} className='h-full'>
                         <PricingPlan
                             title='恋愛タロット占い'
                             disableButton
@@ -380,16 +400,16 @@ const Section4 = () => {
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-                <FadeAndSlideScrollTriggerAnimation innerClassName="h-full">
+                <FadeAndSlideScrollTriggerAnimation className="h-full">
                     <Image src={Events1} alt="sns" className="rounded-lg h-full" />
                 </FadeAndSlideScrollTriggerAnimation>
-                <FadeAndSlideScrollTriggerAnimation innerClassName="h-full">
+                <FadeAndSlideScrollTriggerAnimation className="h-full">
                     <Image src={Events2} alt="sns" className="rounded-lg h-full" />
                 </FadeAndSlideScrollTriggerAnimation>
-                <FadeAndSlideScrollTriggerAnimation innerClassName="h-full">
+                <FadeAndSlideScrollTriggerAnimation className="h-full">
                     <Image src={Events3} alt="sns" className="rounded-lg h-full" />
                 </FadeAndSlideScrollTriggerAnimation>
-                <FadeAndSlideScrollTriggerAnimation innerClassName="h-full">
+                <FadeAndSlideScrollTriggerAnimation className="h-full">
                     <Image src={Events4} alt="sns" className="rounded-lg h-full" />
                 </FadeAndSlideScrollTriggerAnimation>
             </div>
@@ -400,13 +420,13 @@ const Section4 = () => {
 
 interface PlanProps {
     title: string;
-    description: string;
+    description: ReactNode;
     image: StaticImageData;
     disableButton?: boolean;
 }
 
 const PricingPlan = ({ title, description, image, disableButton }: PlanProps) => (
-    <div className={`h-full bg-white p-6 rounded-lg shadow-lg flex flex-col space-y-4`}>
+    <div className={`h-full bg-white p-6 rounded-lg flex flex-col space-y-4 border`}>
         <h2 className="text-title3 text-center text-color9">{title}</h2>
         <p className="text-gray-600 !mb-auto">{description}</p>
         {

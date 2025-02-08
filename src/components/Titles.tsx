@@ -6,7 +6,7 @@ export const TitleType = ({ title, subTitle, className, ancher }: { title: strin
         <>
             <FadeAndSlideScrollTriggerAnimation className={clsx("relative", className)}>
                 {ancher && <div id={ancher} className="absolute -top-40" />}
-                <h2 className="text-[2rem] text-color9/20 font-asterdam" >
+                <h2 className="text-[2rem] text-color9/20 font-asterdam font-light" >
                     {subTitle}
                 </h2>
                 <h2 className="text-[1.5rem] text-title2 text-color9 mt-2" >
@@ -19,8 +19,7 @@ export const TitleType = ({ title, subTitle, className, ancher }: { title: strin
 
 export const TitleType2 = ({ title, subTitle }: { title: string, subTitle: string, }) => {
     return (
-        <FadeAndSlideScrollTriggerAnimation
-            transform={{ scale: 0.94 }}>
+        <FadeAndSlideScrollTriggerAnimation>
             <h2 className="flex gap-2 items-center" >
                 <span className="text-title1 font-bold">
                     {subTitle}

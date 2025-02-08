@@ -15,7 +15,7 @@ export const Footer = () => {
                     {/* ロゴと会社情報 */}
                     <div className="space-y-4 flex flex-col items-center">
                         <h2 className="text-title2 text-color3">Match-Bond</h2>
-                        <p className="text-gray-600">
+                        <p className="text-font1">
                             婚活って楽しい
                         </p>
 
@@ -28,7 +28,7 @@ export const Footer = () => {
                         <ul className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                             {menuItems.map((item) => (
                                 <li key={item.label}>
-                                    <Link href={item.href} className="text-gray-600 hover:text-gray-900 transition-colors">
+                                    <Link href={item.href} className="text-font1 hover:text-gray-900 transition-colors">
                                         {item.label}
                                     </Link>
                                 </li>
@@ -39,7 +39,7 @@ export const Footer = () => {
 
                 {/* コピーライト */}
                 <div className="w-full border-t border-gray-300 mt-12 pt-8">
-                    <p className="text-center text-gray-600">
+                    <p className="text-center text-font1">
                         © {new Date().getFullYear()} Match-Bond. All rights reserved.
                     </p>
                 </div>

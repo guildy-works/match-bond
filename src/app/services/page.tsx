@@ -8,7 +8,6 @@ import { MdArrowCircleDown, MdArrowDropDownCircle } from "react-icons/md";
 import Script from "next/script";
 import { useRouter } from "next/navigation"
 import { FadeAndSlideScrollTriggerAnimation } from "@/libs/ScrollTriggerAnimations/FadeAndSlideScrollTriggerAnimation";
-import { FadeAndSlideAnimation } from "@/libs/Animations/FadeAndSlideAnimation";
 
 const client = createClient({
     spaceUid: 'match-bond',

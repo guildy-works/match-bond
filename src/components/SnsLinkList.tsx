@@ -27,7 +27,7 @@ export const SnsLinkList = () => {
             </a>
 
             <div className='w-full text-center'>
-                <h3 className='text-color10 text-title3'>DMでお気軽にお問い合わせください</h3>
+                <h3 className='text-font1 text-size1'>DMでお気軽にお問い合わせください</h3>
             </div>
         </div>
     )
