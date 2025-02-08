@@ -30,6 +30,7 @@ import Events2 from '@/assets/events/2.png';
 import Events3 from '@/assets/events/3.png';
 import Events4 from '@/assets/events/4.png';
 import { HighlightMarker } from "@/components/HighlightMarker";
+import { ReactNode } from "react";
 
 
 export const ServiceSection = () => {
