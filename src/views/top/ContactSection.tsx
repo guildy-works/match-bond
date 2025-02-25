@@ -16,6 +16,21 @@ export const ContactSection = () => {
 
                 <SnsLinkList />
 
+                <div className="text-center my-8">
+                    <div className="mb-4">
+                        <h3 className="font-medium text-lg mb-1">お電話</h3>
+                        <p className="text-lg">
+                            <a href="tel:080-2930-5154" className="text-color9 hover:underline">080-2930-5154</a>
+                        </p>
+                    </div>
+                    <div>
+                        <h3 className="font-medium text-lg mb-1">メールアドレス</h3>
+                        <p className="text-lg">
+                            <a href="mailto:yumeme19971017@icloud.com" className="text-color9 hover:underline">yumeme19971017@icloud.com</a>
+                        </p>
+                    </div>
+                </div>
+
                 <Image src={LineQR} alt="sns" className="hidden md:block rounded-lg w-[180px] mx-auto" />
             </div>
 
