@@ -31,6 +31,7 @@ import Events3 from '@/assets/events/3.png';
 import Events4 from '@/assets/events/4.png';
 import { HighlightMarker } from "@/components/HighlightMarker";
 import { ReactNode } from "react";
+import { BookingBunner } from "@/components/BookingBunner";
 
 
 export const ServiceSection = () => {
@@ -374,6 +375,11 @@ const Section5 = () => {
                 初回15分無料で恋愛相談窓口を利用できます！<br />
                 ※事前予約が必要です。
             </p>
+
+            <div className="mt-8 sm:mt-16 md:mt-24">
+                <BookingBunner />
+            </div>
+
         </SectionType1>
     )
 }

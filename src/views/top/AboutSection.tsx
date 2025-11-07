@@ -17,6 +17,7 @@ import { DOMMotionComponents, motion, useInView } from "motion/react"
 import Img2 from "@/assets/img2.png";
 import { AboutHeqading } from "@/components/AboutHeading";
 import clsx from "clsx";
+import { BookingBunner } from "@/components/BookingBunner";
 
 export default function AboutSection() {
     return (

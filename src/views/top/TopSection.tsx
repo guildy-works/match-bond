@@ -22,9 +22,9 @@ export const TopSection = () => {
 
                 <FadeAndSlideScrollTriggerAnimation className="text-center mt-12 md:mt-24 text-[#c3735e]">
                     <div className="text-size2 md:text-[1.6rem] md:leading-10" >
-                        Match-Bondは<br />
-                        結婚後も幸せが続く家庭づくりを<br />
-                        全力でサポートします
+                        あえて事務所を構えず<br />
+                        浮いた費用はお客様に還元<br />
+                        入会費•登録費無料の結婚相談所
                     </div>
                 </FadeAndSlideScrollTriggerAnimation>
             </div>

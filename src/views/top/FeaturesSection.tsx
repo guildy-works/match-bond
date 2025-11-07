@@ -1,3 +1,4 @@
+import { BookingBunner } from "@/components/BookingBunner";
 import { SectionType1 } from "@/components/SectionType1";
 import { FadeAndSlideScrollTriggerAnimation } from "@/libs/ScrollTriggerAnimations/FadeAndSlideScrollTriggerAnimation";
 import Link from "next/link";
@@ -6,7 +7,7 @@ import { ReactNode } from "react";
 export const FeaturesSection = () => {
 
     return (
-        <SectionType1 className="bg-color12/10">
+        <SectionType1 className="bg-color12/10" >
             <div className="max-w-4xl mx-auto md:mt-40 flex flex-col gap-8 items-center pb-20">
                 <FadeAndSlideScrollTriggerAnimation className="space-y-3 w-fit">
                     <h2 className="text-center">
@@ -28,6 +29,12 @@ export const FeaturesSection = () => {
 
                 <CardGrid />
             </div>
+
+<div className="w-full mb-24 sm:mb-0">
+           <BookingBunner />
+</div>
+ 
+
         </SectionType1>
 
     )

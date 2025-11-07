@@ -8,6 +8,7 @@ import { ServiceSection } from "@/views/top/ServiceSection";
 import { useEffect, useState } from "react";
 import { FeaturesSection } from "@/views/top/FeaturesSection";
 import { SnsSection } from "@/views/top/SnsSection";
+import { BookingBunner } from "@/components/BookingBunner";
 
 export default function Home() {
     return (
@@ -20,7 +21,7 @@ export default function Home() {
 
             <AboutSection />
 
-            <SnsSection/>
+            <SnsSection />
 
             <ServiceSection />
 

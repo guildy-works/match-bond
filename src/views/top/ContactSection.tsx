@@ -7,7 +7,7 @@ import LineQR from "@/assets/LineQR.png"
 export const ContactSection = () => {
 
     return (
-        <SectionType1 disableLine className="bg-color1" innerClassName="items-center relative">
+        <SectionType1 disableLine className="bg-color1 pt-0" innerClassName="items-center relative">
             <div id="contacts" className="absolute -top-32" />
 
             <div className="bg-white p-8 md:p-16 md:px-48 w-full my-8 md:my-32">
