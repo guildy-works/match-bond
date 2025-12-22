@@ -4,6 +4,12 @@ import withExportImages from 'next-export-optimize-images'
 const nextConfig = {
     output: 'export',
     images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'images.microcms-assets.io',
+            },
+        ],
     },
     compiler: {
     },
