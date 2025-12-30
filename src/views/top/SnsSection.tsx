@@ -7,6 +7,7 @@ import Bunner from "@/assets/bunner.jpg"
 
 import Script from "next/script";
 import { BookingBunner } from "@/components/BookingBunner";
+import { LatestBlogs } from "@/components/LatestBlogs";
 
 export const SnsSection = () => {
     return (
@@ -44,6 +45,9 @@ export const SnsSection = () => {
                 (window as any)?.iFrameResize()
             }}></Script>
             <iframe className="size-full" scrolling="no" src="https://embedsocial.com/api/pro_hashtag/4c3332316a250f2523529ea9478da1f4dad8226b"></iframe>
+
+            <h2 className="text-title2">新着ブログ</h2>
+            <LatestBlogs />
 
             <a className="w-full max-w-[580px] mx-auto" href="https://lciq-diagnosis.com/home?agent_id=8561760" target="_blank" rel="noopener noreferrer">
                 <Image src={Bunner} alt="sns" className="w-full max-w-[680px]" />

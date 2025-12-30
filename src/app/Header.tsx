@@ -27,7 +27,7 @@ export const menuItems = [
     { href: "/#mariage", label: "結婚相談所", },
     { href: "/#plan", label: "料金プラン", },
     { href: "/#events", label: "婚活イベント", },
-    // { href: "/blog", label: "ブログ" },
+    { href: "/blog", label: "ブログ" },
     { href: "/#contacts", label: "お問い合わせ" },
 ];
 

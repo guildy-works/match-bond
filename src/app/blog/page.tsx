@@ -8,53 +8,7 @@ import { useEffect, useState } from 'react';
 import { Loading } from '@/components/Loading';
 import { useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
-
-// 日付をフォーマットする関数
-const formatDate = (dateString: string): string => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('ja-JP', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-    });
-};
-
-// ブログカードコンポーネント
-const BlogCard = ({ blog }: { blog: Blog }) => {
-    return (
-        <Link href={`/blog?id=${blog.id}`} className="block group">
-            <article className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
-                <div className="relative aspect-[16/9] overflow-hidden">
-                    {blog.eyecatch ? (
-                        <img
-                            src={blog.eyecatch.url}
-                            alt={blog.title}
-
-                            className="object-cover group-hover:scale-105 transition-transform duration-300 w-full h-full"
-                        />
-                    ) : (
-                        <div className="w-full h-full bg-color1 flex items-center justify-center">
-                            <span className="text-color3 text-size2">No Image</span>
-                        </div>
-                    )}
-                </div>
-                <div className="p-4">
-                    {blog.category && (
-                        <span className="inline-block px-2 py-1 text-size3 bg-color5 text-color10 rounded mb-2">
-                            {blog.category.name}
-                        </span>
-                    )}
-                    <h2 className="text-title4 line-clamp-2 group-hover:text-color9 transition-colors duration-200">
-                        {blog.title}
-                    </h2>
-                    <time className="block mt-2 text-size3 text-gray-500">
-                        {formatDate(blog.publishedAt)}
-                    </time>
-                </div>
-            </article>
-        </Link>
-    );
-};
+import { BlogCard, formatDate } from '@/components/BlogCard';
 
 // ブログ詳細コンポーネント
 const BlogDetail = ({ blog }: { blog: Blog }) => {
@@ -66,23 +20,27 @@ const BlogDetail = ({ blog }: { blog: Blog }) => {
                     <img
                         src={blog.eyecatch.url}
                         alt={blog.title}
-                        className="object-cover w-full h-full"
+                        className="object-contain w-full h-full"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-color4 to-transparent" />
+                    <div
+                        className="absolute inset-0"
+                        style={{ background: 'linear-gradient(180deg, rgba(42, 123, 155, 0) 0%, rgba(249, 243, 243, 0.1) 80%, rgba(249, 243, 243, 1) 100%)' }}
+                    />
                 </div>
             )}
 
             {/* 記事コンテンツ */}
             <article className="container mx-auto px-4 max-w-3xl">
                 <div className={`${blog.eyecatch ? '-mt-20' : 'mt-16'} relative z-10`}>
-                    {/* ヘッダー情報 */}
-                    <div className="bg-white rounded-lg shadow-sm p-6 sm:p-8 mb-8">
+
+                    {/* 本文 */}
+                    <div className="bg-white rounded-lg mb-8 p-6 sm:p-8 md:p-10">
                         {blog.category && (
-                            <span className="inline-block px-3 py-1 text-size3 bg-color5 text-color10 rounded mb-4">
+                            <span className="inline-block px-3 py-1 text-size3 text-color10 rounded mb-4">
                                 {blog.category.name}
                             </span>
                         )}
-                        <h1 className="text-title2 sm:text-title1 leading-tight mb-4">
+                        <h1 className="text-title2 sm:text-title3 leading-tight mb-4">
                             {blog.title}
                         </h1>
                         <div className="flex flex-wrap gap-4 text-size3 text-gray-500">
@@ -95,10 +53,7 @@ const BlogDetail = ({ blog }: { blog: Blog }) => {
                                 </time>
                             )}
                         </div>
-                    </div>
 
-                    {/* 本文 */}
-                    <div className="bg-white rounded-lg shadow-sm p-6 sm:p-8 mb-8">
                         <div
                             className="html-editor prose prose-lg max-w-none"
                             dangerouslySetInnerHTML={{ __html: blog.content }}
