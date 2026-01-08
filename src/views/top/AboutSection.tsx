@@ -58,7 +58,7 @@ export default function AboutSection() {
             <div className="text-color6  w-full flex justify-center pt-12 overflow-hidden">
 
                 <div className="max-w-5xl w-full flex flex-col">
-                    <FeatureCard
+                    {/* <FeatureCard
                         title="自己紹介"
                         num="01"
                         className="bg-color9_2"
@@ -148,7 +148,7 @@ export default function AboutSection() {
                         結婚したら、楽しめることを制限されるかもしれません。<br />
                         しかし、結婚すると「心が満たされる」「未体験の幸せ」を実感することができます。<br />
                         こんな幸せを実感しないなんて勿体ないです！
-                    </FeatureCard>
+                    </FeatureCard> */}
 
                     <motion.div
                         viewport={{ once: true }}
