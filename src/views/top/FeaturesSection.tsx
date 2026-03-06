@@ -17,25 +17,35 @@ export const FeaturesSection = () => {
                     <hr className="border-color11" />
                 </FadeAndSlideScrollTriggerAnimation>
 
-                <FadeAndSlideScrollTriggerAnimation className="text-color10">
-                    「お得」「効率的」「幸せ」な婚活をサポートします。<br />
+                <FadeAndSlideScrollTriggerAnimation className="text-color10 text-center">
+                    <div className="text-center">
+                        <div>
+                            <span className="font-black">初期費用０円</span>
+                            <span className="text-size2">の結婚相談所</span>
+                        </div>
+                        <div>×</div>
+                        <div>
+                            <span className="font-black">４０社以上の婚活協力企業</span>
+                            <span className="text-size2">と提携</span>
+                        </div>
+                    </div>
 
-                    福山市近辺のお店で<br />
-                    総額〇〇万円お得なサービスを受けながら、<br />
-                    効率的に幸せな婚活・結婚を目指します。<br />
-                    福山市のGoogle口コミNo１の婚活サポートです。
+                    <div className="text-center mt-6">
+                        「今のあなたに必要な場所」が婚活を前に進めます。
+                        出会いから成婚退会まで含めて、
+                        婚活を前に進める仕組みを設計しています。
+                    </div>
                 </FadeAndSlideScrollTriggerAnimation>
 
-
                 <CardGrid />
+            </div >
+
+            <div className="w-full mb-24 sm:mb-0">
+                <BookingBunner />
             </div>
 
-<div className="w-full mb-24 sm:mb-0">
-           <BookingBunner />
-</div>
- 
 
-        </SectionType1>
+        </SectionType1 >
 
     )
 }
@@ -58,30 +68,37 @@ const CardGrid = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             <CardItem
                 href="#support"
-                title="どんな婚活サポート？"
+                title={<>私たちの<br className="sm:hidden" />結婚相談所について</>}
                 delay={0}
-                content={<>「お得」「効率的」<br className="sm:hidden" />「幸せ」</>}
+                content={<>
+                    婚活を始める負担を、限りなくゼロに。<br className="" />
+                    婚活を前に<br className="sm:hidden" />進める仕組みは、<br className="sm:hidden" />どこよりも丁寧に。
+                </>}
                 colorClass="bg-color9"
             />
             <CardItem
                 href="/services#service1"
                 delay={0.01}
-                title={<>お得なサービスが<br className="md:hidden" />受けれるお店一覧</>}
-                content="婚活～結婚に有益なお店"
+                title={<>どんな婚活サポート</>}
+                content={<>４０社以上の<br className="sm:hidden" />婚活協力企業が<br className="" />
+                    あなたの婚活を<br className="sm:hidden" />全力応援</>}
                 colorClass="bg-color10"
             />
             <CardItem
                 delay={0.02}
                 href="#reviews"
-                title="お客様の声"
-                content={<>福山市No1の<br className="sm:hidden" />Google口コミ</>}
+                title="料金プラン"
+                content={<>
+                初期費用０円<br className="sm:hidden" />（入会費・登録費）<br />
+                    お客様の想いから<br className="sm:hidden" />生まれた３つのプラン
+                    </>}
                 colorClass="bg-color11"
             />
             <CardItem
                 delay={0.03}
                 href="#mariage"
-                title="結婚相談所"
-                content={<>「入会金・登録費」<br className="sm:hidden" />初期費用が0円</>}
+                title="お客様の声"
+                content={<>福山市№１の<br className="sm:hidden" />Google口コミ</>}
                 colorClass="bg-color9"
             />
             <CardItem

@@ -54,8 +54,8 @@ const Glossary = () => {
     return (
         <div >
             <div className="max-w-4xl mx-auto">
-                <h1 className="text-title3 font-bold text-gray-800 mb-2 mt-4">用語説明</h1>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
+                <h1 className="text-title3 font-bold text-gray-800 mb-2 mt-4 text-center">用語説明</h1>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 mt-3">
                     <GlossaryItem
                         delay={0}
                         term="入会費"
@@ -111,47 +111,62 @@ const Section2 = () => {
                     <TitleType ancher="" title="料金プラン" subTitle="Plans" className="mx-auto" />
                 </FadeAndSlideScrollTriggerAnimation>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
-                    <FadeAndSlideScrollTriggerAnimation className='h-full'>
+                <div className="max-w-md mx-auto mt-6">
+                    <HighlightMarker>初期費用０円（入会費・登録費）</HighlightMarker><br/>
+                    婚活に踏み出す、最初の一歩を応援したい。<br/>
+                    その想いから、Match‐Bondでは入会費・登録費といった初期費用をいただいていません。<br/>
+                    なぜ、初期費用0円なのか？<br/>
+                    事務所を構えず、不要な固定費をかけない運営を行っているからです。<br/>
+                    抑えた固定費は、会員様が婚活に集中できる仕組みづくりへ還元しています。<br/>
+                    「始めるだけでお金がかかる」そんな婚活にはしたくありません。<br/><br/>
+
+                    <HighlightMarker>お客様の想いから生まれた、３つのプラン</HighlightMarker><br/>
+                    従来の結婚相談所では、「頑張れば頑張るほど費用がかかる」「少し休みたくても固定費がかか<br/>
+                    る」そんな声が多くありました。<br/>
+                    Match‐Bondのプランは、実際のお客様の声と想いをもとに設計しています。
+                </div>
+
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8 mt-6 mx-auto">
+                    <FadeAndSlideScrollTriggerAnimation className='h-full max-w-sm'>
                         <PricingPlan
                             title='3ヵ月お試しプラン'
                             image={Plan}
                             disableButton
                             description={<>
-                                相談所って好みの人いるのかな。<br />
-                                お見合いって本当に組めるのかな。<br />
-                                と不安に思う方にお勧めです。
+                                結婚相談所の雰囲気を知りたい方。<br />
+                                無理なく入会を検討できます。
                             </>}
                         />
                     </FadeAndSlideScrollTriggerAnimation>
 
-                    <FadeAndSlideScrollTriggerAnimation delay={0.02} className='h-full'>
+                    <FadeAndSlideScrollTriggerAnimation delay={0.02} className='h-full max-w-sm'>
                         <PricingPlan
-                            title='月会費￥0プラン'
+                            title='マイペースプラン'
                             image={Plan}
                             disableButton
                             description={<>
-                                「仕事が忙しくて今月お見合いを組めないかもしれないな。」<br />
-                                と、お仕事に波がある方にお勧めです。<br />
+                                月会費０円。<br />
+                                少し休みたい、忙しい、<br/>
+                                自分のペースを大切に婚活したい方。
                             </>}
                         />
                     </FadeAndSlideScrollTriggerAnimation>
 
-                    <FadeAndSlideScrollTriggerAnimation delay={0.04} className='h-full'>
+                    <FadeAndSlideScrollTriggerAnimation delay={0.04} className='h-full max-w-sm'>
                         <PricingPlan
-                            title='お見合い費￥0プラン'
+                            title='婚活集中プラン'
                             image={Plan}
                             disableButton
                             description={<>
-                                沢山の方とのお見合いを経て、<br />
-                                「この人だ。」と思えるお相手を<br />
-                                探したい方にお勧めのプランです。<br />
+                                お見合い費0円<br />
+                                積極的に婚活を進めたい方。
                             </>}
                         />
                     </FadeAndSlideScrollTriggerAnimation>
                 </div>
 
-                <div className="mx-auto py-8 w-36">
+                <div className="mx-auto py-4 md:py-8 w-36">
                     <ServiceDialog  >
                         <div className='w-full p-4'>
                             <Image src={Plan} alt="料金表" />
@@ -341,8 +356,8 @@ const Section5 = () => {
             </FadeAndSlideScrollTriggerAnimation>
 
             <div className='max-w-6xl mx-auto mt-8'>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <FadeAndSlideScrollTriggerAnimation className='h-full'>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8">
+                    <FadeAndSlideScrollTriggerAnimation className='h-full max-w-sm'>
                         <PricingPlan
                             title='お悩み相談'
                             disableButton
@@ -351,7 +366,7 @@ const Section5 = () => {
                         />
                     </FadeAndSlideScrollTriggerAnimation>
 
-                    <FadeAndSlideScrollTriggerAnimation delay={0.06} className='h-full'>
+                    <FadeAndSlideScrollTriggerAnimation delay={0.06} className='h-full max-w-sm'>
                         <PricingPlan
                             title='恋愛コーチング'
                             disableButton
@@ -360,7 +375,7 @@ const Section5 = () => {
                         />
                     </FadeAndSlideScrollTriggerAnimation>
 
-                    <FadeAndSlideScrollTriggerAnimation delay={0.08} className='h-full'>
+                    <FadeAndSlideScrollTriggerAnimation delay={0.08} className='h-full max-w-sm'>
                         <PricingPlan
                             title='恋愛タロット占い'
                             disableButton
@@ -433,9 +448,9 @@ interface PlanProps {
 }
 
 const PricingPlan = ({ title, description, image, disableButton }: PlanProps) => (
-    <div className={`h-full bg-white p-6 rounded-lg flex flex-col space-y-4 border`}>
+    <div className={`h-full bg-white p-6 rounded-lg flex flex-col border`}>
         <h2 className="text-title3 text-center text-color9">{title}</h2>
-        <p className="text-gray-600 !mb-auto">{description}</p>
+        <p className="text-font1 !mb-auto">{description}</p>
         {
             !disableButton && (
                 <ServiceDialog  >

@@ -16,15 +16,13 @@ export const TopSection = () => {
             <TransitionImage imageData={Bg1_Mobile} alt="background" className="md:hidden w-full" />
 
             <div className="absolute flex flex-col justify-center items-center inset-0 m-auto">
-                <FadeAndSlideScrollTriggerAnimation className="font-slight text-[1.8rem] md:text-[3.8rem] font-bold text-[#c3735e]">
+                <FadeAndSlideScrollTriggerAnimation className="font-slight tracking-widest text-[2.3rem] md:text-[4.2rem] font-bold text-[#ec4b4a]">
                     <h1>Match-Bond</h1>
                 </FadeAndSlideScrollTriggerAnimation>
 
-                <FadeAndSlideScrollTriggerAnimation className="text-center mt-12 md:mt-24 text-[#c3735e]">
-                    <div className="text-size2 md:text-[1.6rem] md:leading-10" >
-                        あえて事務所を構えず<br />
-                        浮いた費用はお客様に還元<br />
-                        入会費•登録費無料の結婚相談所
+                <FadeAndSlideScrollTriggerAnimation className="text-center mt-12 md:mt-24 text-[#ec4b4a]">
+                    <div className="text-title4 md:text-[1.6rem] md:leading-10" >
+                        あなたの婚活に最善を尽くします
                     </div>
                 </FadeAndSlideScrollTriggerAnimation>
             </div>

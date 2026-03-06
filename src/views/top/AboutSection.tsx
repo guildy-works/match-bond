@@ -153,27 +153,30 @@ export default function AboutSection() {
                     <motion.div
                         viewport={{ once: true }}
                         initial={{ translateY: "40px", scale: 1.1 }}
-                        whileInView={{  translateY: 0, scale: 1 }}
+                        whileInView={{ translateY: 0, scale: 1 }}
                         transition={{ duration: 0.4, delay: 0.2 }}
-                        className="space-y-8 p-12 -mt-12 rounded-t-3xl  bg-color6 text-color10">
-                        <div className="flex flex-col justify-center md:p-8 gap-4">
-                            <AboutHeqading num="06" title="企業理念" />
+                        className="space-y-8 p-12 -mt-12 rounded-t-3xl  bg-[#eba87b] text-font1">
+                        <div className="flex flex-col justify-center md:p-8 gap-4 items-center">
+                            <AboutHeqading num="" title="企業理念" />
                             <FadeAndSlideScrollTriggerAnimation
-                                className="space-y-2 mt-3 sm:mt-5 md:mt-7 text-size2 "
+                                className="space-y-2 mt-3 sm:mt-5 md:mt-7 max-w-lg text-size2 justify-center flex flex-col items-center"
                             >
-                                Match-Bondの企業理念は<br />
-
-                                <h3 className="text-color9 text-title3 mb-4 font-bold">
+                                <h3 className="text-title3 mb-4 font-bold">
                                     「結婚後も幸せが続く家庭づくりを」
                                 </h3>
 
 
-                                結婚がゴールではありません。<br />
-                                知り合い、気になり、好きなり、付き合い、結婚、家庭を持ち、<br />
-                                その中でたくさんの衝突が出てきます。
-                                そんな時に、お客様を支えるパートナーでありたい。<br />
-                                そんな思いから「夫婦関係」「子育て」のお悩み相談も行っています。<br />
-                                Match-Bondはお客様の婚活から結婚後までを全力でサポートします。
+                                相手のことを少しずつ知りながらパートナーになる。<br />
+                                パートナーになったから終わりではありません。<br />
+                                そこからがやっとスタートになります。<br /><br />
+
+                                結婚式や育児。日々の生活の中でも思いのすれ違いができたとき<br />
+                                どう関わったら良いのか、どうすれば思いが伝わるのかまで相談に乗ります。<br />
+                                その前に、まずはパートナー探しですね。<br />
+                                自分の価値観をカウンセリングを通し<br />
+                                改めて精査しながら一緒にお相手を探しましょう。<br />
+                                あなたの婚活に私たちは最善を尽くします。<br />
+                                共に悩み、共に喜び、応援します。
                             </FadeAndSlideScrollTriggerAnimation>
                         </div>
 
