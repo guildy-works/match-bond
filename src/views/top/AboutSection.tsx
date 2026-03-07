@@ -21,7 +21,7 @@ import { BookingBunner } from "@/components/BookingBunner";
 
 export default function AboutSection() {
     return (
-        <section className="w-full relative -mt-24 sm:mt-0 bg-color12/10">
+        <section className="w-full relative -mt-24 sm:mt-0 bg-color12/10 flex flex-col">
             <div className="w-100vw sm:w-[70vw] absolute inset-0 bg-color12_2 -z-10 rounded-t-3xl sm:rounded-tr-3xl" />
 
             <div className="max-w-5xl grid md:grid-cols-2 mx-auto gap-3 items-center">
@@ -44,18 +44,18 @@ export default function AboutSection() {
                 </div>
 
                 <div className="px-8 -mt-12 md:my-auto">
-                    <motion.div className="rounded-sm overflow-hidden"
-                        viewport={{ once: true }}
-                        initial={{ translateY: "60px", scale: 1.2 }}
+                    <motion.div className="rounded-sm overflow-hidden -z-10"
+                        viewport={{ once: true,}}
+                        initial={{ translateY: "60%", scale: 0.8}}
                         whileInView={{ translateY: 0, scale: 1 }}
-                        transition={{ duration: 0.4, delay: 0.2 }}
+                        transition={{ duration: 0.6, delay:0 }}
                     >
                         <Image src={Profile} alt="img" className="translate-y-12" />
                     </motion.div>
                 </div>
             </div>
 
-            <div className="text-color6  w-full flex justify-center pt-12 overflow-hidden">
+            <div className="text-color6  w-full flex justify-center pt-12 overflow-hidden z-10">
 
                 <div className="max-w-5xl w-full flex flex-col">
                     {/* <FeatureCard
@@ -152,16 +152,16 @@ export default function AboutSection() {
 
                     <motion.div
                         viewport={{ once: true }}
-                        initial={{ translateY: "40px", scale: 1.1 }}
+                        initial={{ translateY: "40px", scale: 1 }}
                         whileInView={{ translateY: 0, scale: 1 }}
-                        transition={{ duration: 0.4, delay: 0.2 }}
+                        transition={{ duration: 0.2 }}
                         className="space-y-8 p-12 -mt-12 rounded-t-3xl  bg-[#eba87b] text-font1">
-                        <div className="flex flex-col justify-center md:p-8 gap-4 items-center">
+                        <div className="flex flex-col justify-center md:p-8 gap-4 items-center z-50">
                             <AboutHeqading num="" title="企業理念" />
                             <FadeAndSlideScrollTriggerAnimation
-                                className="space-y-2 mt-3 sm:mt-5 md:mt-7 max-w-lg text-size2 justify-center flex flex-col items-center"
+                                className="space-y-2 mt-3 sm:mt-5 md:mt-7 max-w-md text-size2 justify-center flex flex-col items-center"
                             >
-                                <h3 className="text-title3 mb-4 font-bold">
+                                <h3 className="text-title4 mb-4 font-bold">
                                     「結婚後も幸せが続く家庭づくりを」
                                 </h3>
 
@@ -170,8 +170,11 @@ export default function AboutSection() {
                                 パートナーになったから終わりではありません。<br />
                                 そこからがやっとスタートになります。<br /><br />
 
-                                結婚式や育児。日々の生活の中でも思いのすれ違いができたとき<br />
-                                どう関わったら良いのか、どうすれば思いが伝わるのかまで相談に乗ります。<br />
+                                結婚式や育児。
+                                日々の生活の中でも<br />
+                                思いのすれ違いができたとき<br className="sm:hidden"/>
+                                どう関わったら良いのか、<br />
+                                どうすれば思いが伝わるのかまで相談に乗ります。<br />
                                 その前に、まずはパートナー探しですね。<br />
                                 自分の価値観をカウンセリングを通し<br />
                                 改めて精査しながら一緒にお相手を探しましょう。<br />

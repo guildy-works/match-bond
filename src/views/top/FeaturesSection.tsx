@@ -8,7 +8,7 @@ export const FeaturesSection = () => {
 
     return (
         <SectionType1 className="bg-color12/10" >
-            <div className="max-w-4xl mx-auto md:mt-40 flex flex-col gap-8 items-center pb-20">
+            <div className="max-w-4xl mx-auto flex flex-col gap-8 items-center pb-20">
                 <FadeAndSlideScrollTriggerAnimation className="space-y-3 w-fit">
                     <h2 className="text-center">
                         <span className="text-color9 text-title1">Match-Bond</span>
@@ -71,8 +71,8 @@ const CardGrid = () => {
                 title={<>私たちの<br className="sm:hidden" />結婚相談所について</>}
                 delay={0}
                 content={<>
-                    婚活を始める負担を、限りなくゼロに。<br className="" />
-                    婚活を前に<br className="sm:hidden" />進める仕組みは、<br className="sm:hidden" />どこよりも丁寧に。
+                    婚活を始める負担を、<br/>限りなくゼロに。<br className="" />
+                    婚活を前に<br className="sm:hidden" />進める仕組みは、<br />どこよりも丁寧に。
                 </>}
                 colorClass="bg-color9"
             />
@@ -90,7 +90,8 @@ const CardGrid = () => {
                 title="料金プラン"
                 content={<>
                 初期費用０円<br className="sm:hidden" />（入会費・登録費）<br />
-                    お客様の想いから<br className="sm:hidden" />生まれた３つのプラン
+                    お客様の想いから<br className="sm:hidden" />生まれた<br />
+                    ３つのプラン
                     </>}
                 colorClass="bg-color11"
             />

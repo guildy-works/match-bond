@@ -26,9 +26,6 @@ export default function Home() {
             <ServiceSection />
 
             <ContactSection />
-
-            <ScrollIndicator />
-
         </>
     );
 }
