@@ -1,7 +1,7 @@
 import { TitleType } from "@/components/Titles";
 import { FadeAndSlideScrollTriggerAnimation } from "@/libs/ScrollTriggerAnimations/FadeAndSlideScrollTriggerAnimation";
 import Image from 'next-export-optimize-images/picture';
-import JBA from '@/assets/JBA.png';
+import JBA from '@/assets/jba.png';
 import IBJ from '@/assets/IBJ.png';
 import Connect from '@/assets/Connect.png';
 import { HighlightMarker } from "@/components/HighlightMarker";
