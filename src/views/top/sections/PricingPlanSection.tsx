@@ -9,7 +9,7 @@ import { Glossary } from "@/components/Glossary";
 
 export const PricingPlanSection = () => {
     return (
-        <div className="w-full bg-color1  p-8 sm:p-16 relative">
+        <div className="w-full bg-color1  p-8 sm:p-16 pt-0 sm:pt-0 relative">
             <div id="plan" className="absolute -top-32" />
 
             <div className='max-w-6xl mx-auto py-8 flex flex-col'>

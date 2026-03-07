@@ -67,7 +67,7 @@ const CardGrid = () => {
     return (
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             <CardItem
-                href="#support"
+                href="#mariage"
                 title={<>私たちの<br className="sm:hidden" />結婚相談所について</>}
                 delay={0}
                 content={<>
@@ -77,7 +77,7 @@ const CardGrid = () => {
                 colorClass="bg-color9"
             />
             <CardItem
-                href="/services#service1"
+                href="#support"
                 delay={0.01}
                 title={<>どんな婚活サポート</>}
                 content={<>４０社以上の<br className="sm:hidden" />婚活協力企業が<br className="" />
@@ -86,7 +86,7 @@ const CardGrid = () => {
             />
             <CardItem
                 delay={0.02}
-                href="#reviews"
+                href="#plan"
                 title="料金プラン"
                 content={<>
                 初期費用０円<br className="sm:hidden" />（入会費・登録費）<br />
@@ -97,7 +97,7 @@ const CardGrid = () => {
             />
             <CardItem
                 delay={0.03}
-                href="#mariage"
+                href="#reviews"
                 title="お客様の声"
                 content={<>福山市№１の<br className="sm:hidden" />Google口コミ</>}
                 colorClass="bg-color9"
