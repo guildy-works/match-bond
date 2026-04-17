@@ -12,13 +12,13 @@ export const HighlightMarker = ({ children, className, markerClassName }: {
     return (
         <div className={clsx(`relative inline-block overflow-hidden mx-1 -mb-1`, className)}
             ref={view}>
-            <span className={`relative z-10 font-bold`}>{children}</span>
+            <span className={`relative z-10 font-medium`}>{children}</span>
             <motion.span
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.5}}
+                transition={{ duration: 1, delay: 0.5}}
                 initial={{ translateX: "-200px" }}
                 animate={{ translateX: isInView ? "0px" : undefined }}
-                className={clsx(`absolute left-0 bottom-0 w-full h-1/3 mb-[2px] opacity-70 -rotate-2 rounded-sm`, markerClassName ?? "bg-color3")}
+                className={clsx(`absolute left-0 bottom-0 w-full h-1/4 mb-[2px] opacity-50 rounded-sm`, markerClassName ?? "bg-gold-light")}
             >
             </motion.span>
         </div>

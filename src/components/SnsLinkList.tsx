@@ -26,8 +26,8 @@ export const SnsLinkList = () => {
                 <Image src={Line} alt="Line" className="w-12" />
             </a>
 
-            <div className='w-full text-center'>
-                <h3 className='text-font1 text-size1'>DMでお気軽にお問い合わせください</h3>
+            <div className='w-full text-center mt-2'>
+                <h3 className='text-body-muted text-size3'>DMでお気軽にお問い合わせください</h3>
             </div>
         </div>
     )

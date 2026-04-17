@@ -7,28 +7,29 @@ import Image from 'next-export-optimize-images/picture';
 
 export const Footer = () => {
     return (
-        <footer className="bg-color3 pt-16 pb-8 w-full">
-            <Image className="mx-auto" src={Logo} alt="Match-Bond" width={160} height={160} />
+        <footer className="bg-primary-dark pt-16 pb-8 w-full">
+            <div className="max-w-4xl mx-auto px-8">
+                {/* Logo & tagline */}
+                <div className="flex flex-col items-center mb-14">
+                    <Image className="mx-auto opacity-80" src={Logo} alt="Match-Bond" width={80} height={80} />
+                    <h2 className="font-slight text-[1.6rem] text-white/80 tracking-[0.2em] mt-4">Match Bond</h2>
+                    <p className="text-white/40 text-size3 mt-2 tracking-wider">あなたの婚活に最善を尽くします</p>
+                </div>
 
-            <div className="mx-auto px-4  w-full mt-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {/* ロゴと会社情報 */}
-                    <div className="space-y-4 flex flex-col items-center">
-                        <h2 className="text-title2 text-color3">Match-Bond</h2>
-                        <p className="text-font1">
-                            婚活って楽しい
-                        </p>
-
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    {/* SNS */}
+                    <div className="flex flex-col items-center">
+                        <h3 className="text-white/30 text-size3 tracking-[0.2em] uppercase mb-5">Follow Us</h3>
                         <SnsLinkList />
                     </div>
 
                     {/* サイトマップ */}
-                    <div className="md:col-span-2 flex flex-col items-center">
-                        <h2 className="text-title3 mb-6">サイトマップ</h2>
-                        <ul className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    <div className="flex flex-col items-center">
+                        <h3 className="text-white/30 text-size3 tracking-[0.2em] uppercase mb-5">Site Map</h3>
+                        <ul className="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-2">
                             {menuItems.map((item) => (
                                 <li key={item.label}>
-                                    <Link href={item.href} className="text-font1 hover:text-gray-900 transition-colors">
+                                    <Link href={item.href} className="text-white/50 hover:text-white/80 transition-colors text-size3">
                                         {item.label}
                                     </Link>
                                 </li>
@@ -38,9 +39,9 @@ export const Footer = () => {
                 </div>
 
                 {/* コピーライト */}
-                <div className="w-full border-t border-gray-300 mt-12 pt-8">
-                    <p className="text-center text-font1">
-                        © {new Date().getFullYear()} Match-Bond. All rights reserved.
+                <div className="w-full border-t border-white/10 mt-14 pt-6">
+                    <p className="text-center text-white/30 text-size3">
+                        © {new Date().getFullYear()} Match-Bond
                     </p>
                 </div>
             </div>

@@ -6,9 +6,9 @@ export const BookingBunner = () => {
     return (
         <div className="w-full flex">
             <Link
-                className="w-full max-w-[580px] mx-auto"
+                className="w-full max-w-[480px] mx-auto rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
                 href="https://www.tl-assist.com/user/reservation/Y6z3gbrp/menu?staff_id=2518" target="_blank"  >
-                <Image src={BookingBunnerImage} alt="Booking Banner" className="w-full max-w-[680px]" />
+                <Image src={BookingBunnerImage} alt="Booking Banner" className="w-full" />
             </Link>
         </div>
     )

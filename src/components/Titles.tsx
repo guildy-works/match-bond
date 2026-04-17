@@ -4,12 +4,12 @@ import clsx from "clsx"
 export const TitleType = ({ title, subTitle, className, ancher }: { title: string, subTitle: string, className?: string, ancher: string }) => {
     return (
         <>
-            <FadeAndSlideScrollTriggerAnimation className={clsx("relative", className)}>
+            <FadeAndSlideScrollTriggerAnimation className={clsx("relative text-center", className)}>
                 {ancher && <div id={ancher} className="absolute -top-40" />}
-                <h2 className="text-[2rem] text-color9/20 font-asterdam font-light" >
+                <h2 className="text-[1.8rem] text-gold/50 font-asterdam tracking-wider" >
                     {subTitle}
                 </h2>
-                <h2 className="text-[1.5rem] text-title2 text-color9 mt-2" >
+                <h2 className="text-title2 font-mincho text-body mt-1 font-medium" >
                     {title}
                 </h2>
             </FadeAndSlideScrollTriggerAnimation>

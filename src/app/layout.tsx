@@ -20,9 +20,8 @@ export default function RootLayout({
     return (
         <html lang="ja" >
             <head>
-                <title>Match-Bond</title>
-                <title>{"Match-Bond 福山"}</title>
-                <meta name="description" content={"Match-Bond｜総額〇〇万円お得に婚活！｜初期費用０円｜福山結婚相談所"} />
+                <title>{"Match-Bond｜福山の結婚相談所"}</title>
+                <meta name="description" content={"Match-Bond｜初期費用０円・40社以上の婚活協力企業と提携｜福山の結婚相談所"} />
 
                 <Script
                     src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}

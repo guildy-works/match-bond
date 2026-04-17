@@ -8,7 +8,7 @@ export const AboutHeqading = (props: {
     twoLine?: boolean
 }) => {
     return <FadeAndSlideScrollTriggerAnimation className={clsx("flex items-center text-center justify-center", props.className)}>
-        <span className="text-[40px] text-color9">{props.num}</span>
-        <h2 className={clsx("ml-4", props.twoLine ? "text-[18px]" : "text-[26px] md:text-[32px]")}>{props.title}</h2>
+        <span className="text-[36px] text-gold/60 font-light">{props.num}</span>
+        <h2 className={clsx("ml-4 font-medium font-mincho", props.twoLine ? "text-[18px]" : "text-[24px] md:text-[28px]")}>{props.title}</h2>
     </FadeAndSlideScrollTriggerAnimation>
 }

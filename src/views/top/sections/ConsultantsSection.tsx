@@ -7,31 +7,28 @@ import { PricingPlan } from "@/components/PricingPlan";
 
 export const ConsultantsSection = () => {
     return (
-        <SectionType1 className="w-full bg-color1 py-8 md:py-24" innerClassName="flex flex-col items-center">
+        <SectionType1 className="w-full bg-blush/30 py-10 md:py-20" innerClassName="flex flex-col items-center">
             <TitleType ancher="consultants" title="恋愛・お悩み相談窓口" subTitle="Consultants" />
+            <div className="heading-line mt-3" />
 
-            <FadeAndSlideScrollTriggerAnimation className="mx-auto mt-8">
-                Match-Bondの恋愛相談窓口は<br />
-                「恋愛」「婚活」「結婚後」「夫婦関係」「子育て」<br />
-                についてのお悩みを受け付けています。<br /><br />
-
-                Match-Bondを利用したいけど、<br />
-                何から利用したらいいのか分からない方も<br />
-                恋愛相談窓口をご利用ください。<br />
+            <FadeAndSlideScrollTriggerAnimation className="mx-auto mt-8 text-center leading-[1.9] max-w-lg text-body-light text-size2">
+                Match-Bondの恋愛相談窓口は
+                「恋愛」「婚活」「結婚後」「夫婦関係」「子育て」についてのお悩みを受け付けています。<br /><br />
+                何から利用したらいいのか分からない方も、恋愛相談窓口をお気軽にご利用ください。
             </FadeAndSlideScrollTriggerAnimation>
 
-            <div className='max-w-6xl mx-auto mt-8'>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8">
+            <div className='max-w-4xl mx-auto mt-10'>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                     <FadeAndSlideScrollTriggerAnimation className='h-full max-w-sm'>
                         <PricingPlan
                             title='お悩み相談'
                             disableButton
                             image={Plan}
-                            description={<>恋愛・婚活・結婚後・夫婦関係・子育て<br />についての相談を受け付けます。</>}
+                            description={<>恋愛・婚活・結婚後<br />夫婦関係・子育てについての相談を受け付けます。</>}
                         />
                     </FadeAndSlideScrollTriggerAnimation>
 
-                    <FadeAndSlideScrollTriggerAnimation delay={0.06} className='h-full max-w-sm'>
+                    <FadeAndSlideScrollTriggerAnimation delay={0.03} className='h-full max-w-sm'>
                         <PricingPlan
                             title='恋愛コーチング'
                             disableButton
@@ -40,7 +37,7 @@ export const ConsultantsSection = () => {
                         />
                     </FadeAndSlideScrollTriggerAnimation>
 
-                    <FadeAndSlideScrollTriggerAnimation delay={0.08} className='h-full max-w-sm'>
+                    <FadeAndSlideScrollTriggerAnimation delay={0.06} className='h-full max-w-sm'>
                         <PricingPlan
                             title='恋愛タロット占い'
                             disableButton
@@ -52,12 +49,12 @@ export const ConsultantsSection = () => {
                 </div>
             </div>
 
-            <p className="mt-8">
+            <p className="mt-8 text-center text-primary font-medium">
                 初回15分無料で恋愛相談窓口を利用できます！<br />
-                ※事前予約が必要です。
+                <span className="text-size3 text-body-muted font-normal">※事前予約が必要です。</span>
             </p>
 
-            <div className="mt-8 sm:mt-16 md:mt-24">
+            <div className="mt-10 sm:mt-14 md:mt-16">
                 <BookingBunner />
             </div>
         </SectionType1>

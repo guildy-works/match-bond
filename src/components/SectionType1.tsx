@@ -6,7 +6,7 @@ export const SectionType1 = ({ children, disableLine, className, innerClassName 
         <div className={clsx("max-w-screen-md xl:max-w-screen-lg mx-auto flex flex-wrap relative", innerClassName) }>
             {/* Line */ }
             {
-                !disableLine && <div className="h-px w-full mt-12 bg-color1 absolute" style={{ right: "calc(100% + 32px)" }}> </div>
+                !disableLine && <div className="h-px w-full mt-12 bg-sand/50 absolute" style={{ right: "calc(100% + 32px)" }}> </div>
             }
 
             {children}

@@ -1,32 +1,39 @@
 .viewMore {
     position: relative;
-    padding: 2.4rem;
-    padding-bottom: 1.4rem;
-    padding-top: 0.6rem;
-    @apply bg-color5 rounded-lg;
-    font-size: 0.9rem;
+    padding: 2rem;
+    padding-bottom: 1.6rem;
+    padding-top: 0.8rem;
+    @apply bg-white border border-sand/40 rounded-2xl;
+    font-size: 0.85rem;
     line-height: 1.6;
-    text-align: left;
-    transition: all 0.2s;
-    box-sizing: border-box;
-    color: #212121;
     text-align: center;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    color: #2d1a1a;
+    letter-spacing: 0.02em;
 
     &::after {
         content: "";
         position: absolute;
-        width: 34px;
-        height: 5px;
+        width: 30px;
+        height: 4px;
         left: 0;
         right: 0;
-        bottom: 1rem;
+        bottom: 0.8rem;
         margin: auto;
         background: url(/Arrow.svg) 0 0 no-repeat;
-        background-size: 34px 4.6px;
-        transition: all 0.3s;
+        background-size: 30px 4px;
+        transition: all 0.3s ease;
+        opacity: 0.6;
+    }
+
+    &:hover {
+        @apply shadow-sm;
+        transform: translateY(-1px);
     }
 
     &:hover::after {
         left: 1rem;
+        opacity: 1;
     }
 }

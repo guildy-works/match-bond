@@ -33,58 +33,51 @@ export const menuItems = [
 
 export const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const state = useScroll()
 
     return (
         <>
-            <header className="flex items-center sticky top-0 mt-0 bg-white/60 backdrop-blur-lg z-20">
-                <Link href="/">
-                    <h1 className='font-slight ml-3 text-color3 text-[26px] font-normal whitespace-nowrap outline-none'>Match Bond</h1>
+            <header className="flex items-center sticky top-0 bg-linen/80 backdrop-blur-xl z-20 border-b border-sand/50">
+                <Link href="/" className="ml-7 py-4">
+                    <h1 className='font-slight text-primary text-[26px] font-normal whitespace-nowrap tracking-[0.15em]'>Match Bond</h1>
                 </Link>
 
                 {/* Desktop */}
-                <nav className="hidden w-full md:flex gap-6 justify-end py-8 px-20">
-
+                <nav className="hidden w-full md:flex gap-10 justify-end py-6 px-20">
                     <div className='ml-auto' />
-                    {menuItems.map((item, index) => {
-                        return (
-                            <div className="relative group" key={index} >
-                                <Link
-                                    href={item.href}
-                                    className="text-navigation py-2 group-hover:text-color3 group-hover:border-b-2 border-color3 transition duration-300"
-                                >
-                                    {item.label}
-                                </Link>
+                    {menuItems.map((item, index) => (
+                        <div className="relative group" key={index}>
+                            <Link
+                                href={item.href}
+                                className="text-navigation py-2 text-body/70 hover:text-primary transition-colors duration-300"
+                            >
+                                {item.label}
+                            </Link>
 
-                                {item.childlen?.length && (
-                                    <div className="absolute z-10 hidden top-6 group-hover:block group-hover:border-t-2 border-color3 w-max transition duration-300">
-                                        <div className="p-4 bg-white rounded-sm w-full flex flex-col">
-                                            {
-                                                item.childlen?.map((child, index) => (
-                                                    <Link
-                                                        key={index}
-                                                        href={child.href}
-                                                        className="text-navigation hover:text-color3 transition duration-300"
-                                                    >
-                                                        {child.title}
-                                                    </Link>
-                                                ))
-                                            }
-
-                                        </div>
+                            {item.childlen?.length && (
+                                <div className="absolute z-10 hidden top-8 group-hover:block w-max transition duration-300">
+                                    <div className="p-4 bg-white/95 backdrop-blur-md rounded-lg shadow-lg border border-sand/30 flex flex-col gap-2">
+                                        {item.childlen?.map((child, idx) => (
+                                            <Link
+                                                key={idx}
+                                                href={child.href}
+                                                className="text-navigation hover:text-primary transition duration-300 py-1"
+                                            >
+                                                {child.title}
+                                            </Link>
+                                        ))}
                                     </div>
-                                )}
-                            </div>
-                        )
-                    })}
+                                </div>
+                            )}
+                        </div>
+                    ))}
                 </nav>
 
                 {/* Mobile */}
                 <nav className="flex md:hidden w-full gap-6 justify-end py-2">
                     <button
                         onClick={() => setIsMenuOpen(true)}
-                        className="flex items-center justify-center p-2 w-12 h-12 rounded-full text-color3 hover:bg-color3/10">
-                        <MdMenu size={48} />
+                        className="flex items-center justify-center p-2 w-12 h-12 rounded-full text-body/60 hover:text-primary transition-colors">
+                        <MdMenu size={28} />
                     </button>
 
                     <Drawer isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
@@ -103,55 +96,55 @@ const Drawer = ({ isOpen, setIsOpen, children }: React.PropsWithChildren<Props>)
     const close = () => setIsOpen(false);
 
     return (
-
         <Dialog transition open={isOpen} as="div"
             className="relative z-50 focus:outline-none transition duration-300 ease-out data-[closed]:opacity-0"
             onClose={close}>
             <div className="fixed inset-0 z-50">
-                <DialogPanel className="relative bg-white/80 backdrop-blur-lg w-full h-screen p-4 flex flex-col items-center">
+                <DialogPanel className="relative bg-linen/95 backdrop-blur-2xl w-full h-screen p-4 flex flex-col items-center justify-center">
 
-                    <h1 className='py-6 text-title2 font-slight text-color3'>Match Bond</h1>
+                    <h1 className='py-6 text-[2rem] font-slight text-primary tracking-[0.2em]'>Match Bond</h1>
+                    <div className='heading-line mb-8' />
 
-                    <nav className="flex flex-col gap-6 h-full justify-center items-start">
+                    <nav className="flex flex-col gap-5 items-center">
                         {menuItems.map((item, index) => (
-                            <FadeAndSlideScrollTriggerAnimation key={item.href} delay={index * 0.01} className="flex flex-col gap-4">
+                            <FadeAndSlideScrollTriggerAnimation key={item.href} delay={index * 0.01} className="flex flex-col gap-3 items-center">
                                 <Link
                                     onClick={() => setIsOpen(false)}
-                                    key={index}
                                     href={item.href}
-                                    className="text-navigation hover:text-color3 transition duration-300"
+                                    className="text-navigation text-body/80 hover:text-primary transition duration-300"
                                 >
                                     {item.label}
                                 </Link>
-                                {
-                                    item.childlen?.length && (
-                                        item.childlen?.map(
-                                            (child, index) => (
-                                                <Link
-                                                    onClick={() => setIsOpen(false)}
-                                                    key={child.href}
-                                                    href={child.href}
-                                                    className="ml-4 text-navigation hover:text-color3 transition duration-300"
-                                                >
-                                                    {child.title}
-                                                </Link>
-                                            )
-                                        )
-                                    )
-                                }
+                                {item.childlen?.length && (
+                                    item.childlen?.map((child) => (
+                                        <Link
+                                            onClick={() => setIsOpen(false)}
+                                            key={child.href}
+                                            href={child.href}
+                                            className="text-navigation text-body-muted hover:text-primary transition duration-300"
+                                        >
+                                            {child.title}
+                                        </Link>
+                                    ))
+                                )}
                             </FadeAndSlideScrollTriggerAnimation>
                         ))}
                     </nav>
-                    <Image className="mb-8" src={Logo} alt="Match-Bond" width={120} height={120} loading="lazy" />
 
-                    <SnsLinkList />
+                    <div className="mt-10">
+                        <Image className="opacity-80" src={Logo} alt="Match-Bond" width={80} height={80} loading="lazy" />
+                    </div>
 
-                    <button data-collapse-toggle="navbar-hamburger"
+                    <div className="mt-6">
+                        <SnsLinkList />
+                    </div>
+
+                    <button
                         onClick={() => setIsOpen(false)}
                         type="button"
-                        className="absolute top-4 right-4 inline-flex items-center justify-center p-2 w-12 h-12 text-sm rounded-full text-color3 hover:bg-color3/10"
+                        className="absolute top-5 right-5 inline-flex items-center justify-center p-2 w-10 h-10 text-sm rounded-full text-body/50 hover:text-primary transition-colors"
                     >
-                        <MdClose size={24} />
+                        <MdClose size={22} />
                     </button>
                 </DialogPanel>
             </div>

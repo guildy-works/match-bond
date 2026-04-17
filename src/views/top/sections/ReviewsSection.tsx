@@ -11,26 +11,30 @@ import Review6 from '@/assets/reviews/6.png';
 
 export const ReviewsSection = () => {
     return (
-        <div className="w-full my-32 bg-[#f5ece7] max-w-screen-md grid md:grid-cols-2 py-24 md:px-32 mx-auto gap-3">
-            <div className="flex flex-col gap-8 p-8 sm:p-16 my-auto items-center" >
+        <div className="w-full my-20 bg-blush/40 max-w-screen-md grid md:grid-cols-2 py-16 md:px-20 mx-auto gap-6 rounded-[2rem]">
+            <div className="flex flex-col gap-6 p-8 sm:p-10 my-auto items-center" >
                 <TitleType ancher="reviews" title="お客様の声" subTitle="Reviews" />
-                <LinkButton href="https://g.co/kgs/CJDKC7U" title="Google口コミはこちら" ></LinkButton>
+                <div className="heading-line" />
+                <p className="text-body-muted text-size2 text-center leading-[1.9]">
+                    実際にご利用いただいた<br />お客様からの声をご紹介します。
+                </p>
+                <LinkButton href="https://g.co/kgs/CJDKC7U" title="Google口コミはこちら" />
 
-                <FadeAndSlideScrollTriggerAnimation  >
+                <FadeAndSlideScrollTriggerAnimation className="text-size3 text-center text-body-muted">
                     Instagram／LINEに届いたお客様の声
                 </FadeAndSlideScrollTriggerAnimation>
             </div>
 
-            <div className="px-8 max-w-screen-sm my-auto grid grid-cols-2 gap-2 md:gap-6 mx-auto">
+            <div className="px-8 max-w-screen-sm my-auto grid grid-cols-2 gap-3 mx-auto">
                 <div>
-                    <Image src={Review4} alt="安心して相談できました" className="rounded-2xl" />
+                    <Image src={Review4} alt="お客様の声" className="rounded-xl shadow-sm" />
                 </div>
-                <div className="flex flex-col gap-2 md:gap-6">
-                    <Image src={Review1} alt="安心して相談できました" className="rounded-2xl" />
-                    <Image src={Review2} alt="安心して相談できました" className="rounded-2xl" />
-                    <Image src={Review3} alt="安心して相談できました" className="rounded-2xl" />
-                    <Image src={Review5} alt="安心して相談できました" className="rounded-2xl" />
-                    <Image src={Review6} alt="安心して相談できました" className="rounded-2xl" />
+                <div className="flex flex-col gap-3">
+                    <Image src={Review1} alt="お客様の声" className="rounded-xl shadow-sm" />
+                    <Image src={Review2} alt="お客様の声" className="rounded-xl shadow-sm" />
+                    <Image src={Review3} alt="お客様の声" className="rounded-xl shadow-sm" />
+                    <Image src={Review5} alt="お客様の声" className="rounded-xl shadow-sm" />
+                    <Image src={Review6} alt="お客様の声" className="rounded-xl shadow-sm" />
                 </div>
             </div>
         </div>

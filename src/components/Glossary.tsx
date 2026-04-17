@@ -9,9 +9,9 @@ interface GlossaryItemProps {
 
 const GlossaryItem = ({ term, description, delay }: GlossaryItemProps) => {
     return (
-        <FadeAndSlideScrollTriggerAnimation delay={delay} className="text-center h-full p-3 bg-gray-50 rounded-lg border border-gray-200">
-            <h2 className="text-size2 font-semibold text-color9">{term}</h2>
-            <p className="text-gray-600 mt-1 text-size3">{description}</p>
+        <FadeAndSlideScrollTriggerAnimation delay={delay} className="text-center h-full p-4 bg-white rounded-xl border border-sand/20 shadow-sm">
+            <h2 className="text-size2 font-medium text-primary">{term}</h2>
+            <p className="text-body-muted mt-2 text-size3 leading-[1.9]">{description}</p>
         </FadeAndSlideScrollTriggerAnimation>
     );
 };
@@ -20,7 +20,8 @@ export const Glossary = () => {
     return (
         <div>
             <div className="max-w-4xl mx-auto">
-                <h1 className="text-title3 font-bold text-gray-800 mb-2 mt-4 text-center">用語説明</h1>
+                <h1 className="text-title4 font-medium font-mincho text-body mb-3 mt-6 text-center">用語説明</h1>
+                <div className="heading-line mb-6" />
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 mt-3">
                     <GlossaryItem
                         delay={0}
@@ -35,7 +36,7 @@ export const Glossary = () => {
                     <GlossaryItem
                         term="月会費"
                         delay={0.02}
-                        description="結婚相談所の使用料（毎月）"
+                        description={<>結婚相談所の使用料<br/>（毎月）</>}
                     />
                     <GlossaryItem
                         term="お見合い費"
@@ -45,7 +46,7 @@ export const Glossary = () => {
                     <GlossaryItem
                         delay={0.04}
                         term="本交際"
-                        description="交際する人を1名に決めること"
+                        description={<>交際する人を1名に<br/>決めること</>}
                     />
                     <GlossaryItem
                         term="成婚退会"
