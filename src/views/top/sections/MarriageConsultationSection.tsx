@@ -46,16 +46,17 @@ export const MarriageConsultationSection = () => {
                     <div className="flex flex-col max-w-xl bg-white/70 p-7 rounded-2xl border border-sand/30">
                         <HighlightMarker className="mx-auto text-title4"> お客様の想いから生まれた3つのプラン</HighlightMarker>
                         <FadeAndSlideScrollTriggerAnimation className="w-full mt-4 leading-[1.9] text-body-light text-size2" >
-                            婚活の進め方は、人それぞれ。活動スタイルに合わせて選べるプランを用意しています。
-                            <span className="inline-block mt-3 space-y-1 text-primary text-size2">
+                            婚活の進め方は、人それぞれ。<br/>
+                            活動スタイルに合わせて選べるプランを用意しています。
+                        </FadeAndSlideScrollTriggerAnimation>
+                        <span className="inline-block mt-3 space-y-1 text-primary text-size2">
                             ・3ヶ月お試しプラン（まずは結婚相談所の雰囲気を知りたい方へ）<br />
                             ・マイペースプラン（月会費０円／自分のペースで婚活したい方へ）<br />
                             ・婚活集中プラン（お見合い費0円／積極的に婚活を進めたい方へ）
-                            </span>
-                            <span className="block mt-3">
-                            従来の結婚相談所では「頑張れば頑張るほど費用がかかる」「少し休みたくても固定費がかかる」そんな声が多くありました。
-                            Match‐Bondのプランは、実際のお客様の声と想いをもとに設計しています。
-                            </span>
+                        </span>
+                        <FadeAndSlideScrollTriggerAnimation className="w-full mt-4 leading-[1.9] text-body-light text-size2" >
+                                従来の結婚相談所では「頑張れば頑張るほど費用がかかる」「少し休みたくても固定費がかかる」そんな声が多くありました。
+                                Match‐Bondのプランは、実際のお客様の声と想いをもとに設計しています。
                         </FadeAndSlideScrollTriggerAnimation>
                         <Link className="mt-4 text-center text-primary hover:text-primary-dark transition-colors text-size2" href="#plan">
                             → 詳しくは【料金プラン】をご覧ください
