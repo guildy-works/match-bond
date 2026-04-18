@@ -31,7 +31,7 @@ export const TopSection = () => {
 
                 {/* Tagline */}
                 <FadeAndSlideScrollTriggerAnimation className="mt-4 text-center">
-                    <p className="text-title4 md:text-[1.15rem] tracking-[0.12em] text-[#ec4b4a] text-body-light font-mincho leading-[2.4]">
+                    <p className="text-title4 md:text-[1.15rem] tracking-[0.12em] text-[#ec4b4a] font-mincho leading-[2.4]">
                        あなたの婚活に最善を尽くします
                     </p>
                 </FadeAndSlideScrollTriggerAnimation>
@@ -47,7 +47,7 @@ export const TopSection = () => {
                 <FadeAndSlideScrollTriggerAnimation className="mt-8 flex flex-col sm:flex-row items-center gap-3">
                     <Link
                         href="#contacts"
-                        className="inline-block px-10 py-3 bg-primary text-white text-size2 tracking-[0.12em] rounded-full hover:bg-primary-dark transition-all duration-500 shadow-md hover:shadow-lg"
+                        className="inline-block px-10 py-3 bg-primary text-white text-size2 tracking-[0.12em] rounded-full hover:bg-primary-dark transition-all duration-500"
                     >
                         無料相談をする
                     </Link>
