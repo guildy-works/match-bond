@@ -13,36 +13,49 @@ export const EventsSection = () => {
         <SectionType1 className="w-full bg-linen py-10 md:py-20" innerClassName="flex flex-col items-center">
             <TitleType title="婚活イベント" subTitle="Events" ancher="events" />
             <div className="heading-line mt-3" />
-            <div className="flex flex-col gap-6 mt-8 max-w-lg text-center" >
+
+            {/* 96% stat callout */}
+            <FadeAndSlideScrollTriggerAnimation className="mt-10 flex flex-col items-center gap-2">
+                <div className="flex items-end gap-4">
+                    <p className="text-[4.5rem] md:text-[5.5rem] font-mincho font-bold text-primary leading-none">96%</p>
+                    <div className="pb-3 text-left">
+                        <p className="text-size2 text-body font-medium">マッチング率</p>
+                        <p className="text-size3 text-body-muted">（2024年10月時点）</p>
+                    </div>
+                </div>
+                <p className="text-size3 text-body-muted tracking-[0.1em]">イベント参加者のカップリング成立率</p>
+            </FadeAndSlideScrollTriggerAnimation>
+
+            <div className="heading-line mt-4" />
+
+            {/* Description */}
+            <div className="flex flex-col gap-5 mt-8 max-w-lg text-center">
                 <FadeAndSlideScrollTriggerAnimation className="leading-[1.9] text-body-light text-size2">
-                    Match-Bondの婚活イベントは<HighlightMarker> マッチング率96%</HighlightMarker>（2024年10月時点）。
-                    婚活イベントは最初に「初対面の気まずさ」という最大の難関が待ち構えています。
-                    Match-Bondはイベントに<HighlightMarker> 様々なアイデアを詰め込んでいます。</HighlightMarker>
-                    どんなアイデアかって？それは参加してみてのお楽しみ！<br /><br />
+                    婚活イベントの最大の難関は、初対面の気まずさ。
+                    Match-Bondでは<HighlightMarker>様々なアイデアを詰め込み</HighlightMarker>、
+                    自然に会話が生まれる場を作っています。
+                    どんなアイデアかは、参加してのお楽しみ。
+                </FadeAndSlideScrollTriggerAnimation>
 
+                <FadeAndSlideScrollTriggerAnimation className="leading-[1.9] text-body-light text-size2">
                     「話す」きっかけや流れを作ることで、居心地の良さは変わります。
-                    少しでも「楽しい」と思っていただけるようなイベントを開催しています。
-                    1人で参加するのが不安でも、しっかりサポートするので大丈夫です。<br /><br />
+                    1人参加でも安心してご参加いただけるよう、しっかりサポートします。
+                </FadeAndSlideScrollTriggerAnimation>
 
-                    <span className="text-primary text-size2">
-                    結婚相談所に入会すると婚活イベントを毎回500円引きで参加できます。
+                <FadeAndSlideScrollTriggerAnimation>
+                    <span className="inline-block px-6 py-2.5 bg-primary-pale text-primary text-size2 rounded-full font-medium border border-primary/20">
+                        結婚相談所に入会すると毎回500円引き
                     </span>
                 </FadeAndSlideScrollTriggerAnimation>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-10">
-                <FadeAndSlideScrollTriggerAnimation className="h-full">
-                    <Image src={Events1} alt="婚活イベント" className="rounded-xl h-full shadow-sm" />
-                </FadeAndSlideScrollTriggerAnimation>
-                <FadeAndSlideScrollTriggerAnimation className="h-full">
-                    <Image src={Events2} alt="婚活イベント" className="rounded-xl h-full shadow-sm" />
-                </FadeAndSlideScrollTriggerAnimation>
-                <FadeAndSlideScrollTriggerAnimation className="h-full">
-                    <Image src={Events3} alt="婚活イベント" className="rounded-xl h-full shadow-sm" />
-                </FadeAndSlideScrollTriggerAnimation>
-                <FadeAndSlideScrollTriggerAnimation className="h-full">
-                    <Image src={Events4} alt="婚活イベント" className="rounded-xl h-full shadow-sm" />
-                </FadeAndSlideScrollTriggerAnimation>
+            {/* Photo grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-12">
+                {[Events1, Events2, Events3, Events4].map((img, i) => (
+                    <FadeAndSlideScrollTriggerAnimation key={i} className="h-full">
+                        <Image src={img} alt="婚活イベント" className="rounded-xl h-full shadow-sm" />
+                    </FadeAndSlideScrollTriggerAnimation>
+                ))}
             </div>
         </SectionType1>
     );

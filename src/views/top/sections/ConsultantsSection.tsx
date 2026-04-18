@@ -1,9 +1,28 @@
 import { TitleType } from "@/components/Titles";
 import { FadeAndSlideScrollTriggerAnimation } from "@/libs/ScrollTriggerAnimations/FadeAndSlideScrollTriggerAnimation";
-import Plan from '@/assets/plan.jpg';
 import { SectionType1 } from "@/components/SectionType1";
 import { BookingBunner } from "@/components/BookingBunner";
-import { PricingPlan } from "@/components/PricingPlan";
+
+const services = [
+    {
+        num: "01",
+        subtitle: "まずは話してみる",
+        title: "お悩み相談",
+        desc: "恋愛・婚活・結婚後・夫婦関係・子育てについてのお悩みを受け付けています。何から始めればよいか分からない方もお気軽にどうぞ。",
+    },
+    {
+        num: "02",
+        subtitle: "目標を決めて動き出す",
+        title: "恋愛コーチング",
+        desc: "お客様の想いを明確にし、目標を設定。やるべき行動を一緒に考えます。",
+    },
+    {
+        num: "03",
+        subtitle: "楽しみながら前向きに",
+        title: "恋愛タロット占い",
+        desc: "恋愛タロット占いで、未来を楽しく占いましょう。軽い気持ちでもOKです。",
+    },
+];
 
 export const ConsultantsSection = () => {
     return (
@@ -12,47 +31,46 @@ export const ConsultantsSection = () => {
             <div className="heading-line mt-3" />
 
             <FadeAndSlideScrollTriggerAnimation className="mx-auto mt-8 text-center leading-[1.9] max-w-lg text-body-light text-size2">
-                Match-Bondの恋愛相談窓口は
-                「恋愛」「婚活」「結婚後」「夫婦関係」「子育て」についてのお悩みを受け付けています。<br /><br />
-                何から利用したらいいのか分からない方も、恋愛相談窓口をお気軽にご利用ください。
+                「婚活の前に、まず誰かに話したい」<br />
+                そんなあなたにも、Match-Bondは寄り添います。<br /><br />
+                恋愛・婚活・結婚後・夫婦関係・子育てまで、<br />
+                どんなお悩みもお受けしています。
             </FadeAndSlideScrollTriggerAnimation>
 
-            <div className='max-w-4xl mx-auto mt-10'>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                    <FadeAndSlideScrollTriggerAnimation className='h-full max-w-sm'>
-                        <PricingPlan
-                            title='お悩み相談'
-                            disableButton
-                            image={Plan}
-                            description={<>恋愛・婚活・結婚後<br />夫婦関係・子育てについての相談を受け付けます。</>}
-                        />
-                    </FadeAndSlideScrollTriggerAnimation>
+            {/* Free trial callout */}
+            <FadeAndSlideScrollTriggerAnimation className="mt-8">
+                <div className="inline-flex items-center gap-4 bg-white px-8 py-5 rounded-2xl border border-primary/20 shadow-sm">
+                    <div className="text-center">
+                        <p className="text-[2rem] font-mincho font-bold text-primary leading-none">15分</p>
+                        <p className="text-size3 text-body-muted mt-0.5">初回無料</p>
+                    </div>
+                    <div className="w-px h-10 bg-sand/60" />
+                    <p className="text-size2 text-body-light leading-relaxed">
+                        まずは無料でご相談ください。<br />
+                        <span className="text-size3 text-body-muted">※ 事前予約が必要です。</span>
+                    </p>
+                </div>
+            </FadeAndSlideScrollTriggerAnimation>
 
-                    <FadeAndSlideScrollTriggerAnimation delay={0.03} className='h-full max-w-sm'>
-                        <PricingPlan
-                            title='恋愛コーチング'
-                            disableButton
-                            image={Plan}
-                            description={<>お客様の想いを明確にし、<br />目標を設定、<br />やるべき行動をお伝えします。</>}
-                        />
-                    </FadeAndSlideScrollTriggerAnimation>
-
-                    <FadeAndSlideScrollTriggerAnimation delay={0.06} className='h-full max-w-sm'>
-                        <PricingPlan
-                            title='恋愛タロット占い'
-                            disableButton
-                            image={Plan}
-                            description={<>恋愛タロット占いで楽しく<br />
-                                未来を占いましょう。</>}
-                        />
-                    </FadeAndSlideScrollTriggerAnimation>
+            {/* Service step cards */}
+            <div className="max-w-4xl mx-auto mt-10 w-full">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    {services.map((service, i) => (
+                        <FadeAndSlideScrollTriggerAnimation key={service.num} delay={i * 0.04}>
+                            <div className="bg-white rounded-2xl border border-sand/30 p-7 shadow-sm flex flex-col gap-3 h-full">
+                                <span className="font-asterdam text-gold/60 text-[1.4rem] tracking-wider">
+                                    {service.num}
+                                </span>
+                                <div>
+                                    <p className="text-size3 text-primary font-medium">{service.subtitle}</p>
+                                    <h3 className="text-size1 text-body font-medium mt-1">{service.title}</h3>
+                                </div>
+                                <p className="text-size2 text-body-muted leading-[1.9] mt-auto">{service.desc}</p>
+                            </div>
+                        </FadeAndSlideScrollTriggerAnimation>
+                    ))}
                 </div>
             </div>
-
-            <p className="mt-8 text-center text-primary font-medium">
-                初回15分無料で恋愛相談窓口を利用できます！<br />
-                <span className="text-size3 text-body-muted font-normal">※事前予約が必要です。</span>
-            </p>
 
             <div className="mt-10 sm:mt-14 md:mt-16">
                 <BookingBunner />

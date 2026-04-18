@@ -1,14 +1,14 @@
-
-import { SupportSection } from "./sections/SupportSection";
-import { PricingPlanSection } from "./sections/PricingPlanSection";
 import { MarriageConsultationSection } from "./sections/MarriageConsultationSection";
+import { PricingPlanSection } from "./sections/PricingPlanSection";
+import { SupportSection } from "./sections/SupportSection";
 import { EventsSection } from "./sections/EventsSection";
-import { ConsultantsSection } from "./sections/ConsultantsSection";
 import { ReviewsSection } from "./sections/ReviewsSection";
+import { ConsultantsSection } from "./sections/ConsultantsSection";
 
 export const ServiceSection = () => {
     return (
         <>
+
             <SupportSection />
             <ReviewsSection />
             <MarriageConsultationSection />

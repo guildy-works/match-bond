@@ -33,7 +33,8 @@ export default function AboutSection() {
                     </FadeAndSlideScrollTriggerAnimation>
 
                     <FadeAndSlideScrollTriggerAnimation className="mt-6 text-title4 text-body leading-relaxed">
-                        Match-Bondのホームページにご訪問いただき、<br />
+                        Match-Bondのホームページに<br />
+                        ご訪問いただき<br />
                         誠にありがとうございます。
                     </FadeAndSlideScrollTriggerAnimation>
 
