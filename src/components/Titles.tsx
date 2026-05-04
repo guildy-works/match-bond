@@ -9,7 +9,7 @@ export const TitleType = ({ title, subTitle, className, ancher }: { title: strin
                 <h2 className="text-[1.8rem] text-gold/50 font-asterdam tracking-wider" >
                     {subTitle}
                 </h2>
-                <h2 className="text-title2 font-mincho text-body mt-1 font-medium" >
+                <h2 className="text-title2 font-mincho text-primary mt-1 font-medium" >
                     {title}
                 </h2>
             </FadeAndSlideScrollTriggerAnimation>

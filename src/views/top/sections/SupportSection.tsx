@@ -26,7 +26,7 @@ export const SupportSection = () => {
                     <TransitionImage alt="婚活サポート" imageData={mariage1} className="sm:hidden rounded-xl mt-auto shadow-sm" />
 
                     <div className="flex flex-col max-w-md">
-                        <HighlightMarker className="mx-auto text-size1"> 婚活を前に進める「40社以上の婚活応援企業」と提携</HighlightMarker>
+                        <HighlightMarker className="mx-auto text-size1 tracking-tight"> 婚活を前に進める「40社以上の婚活応援企業」と提携</HighlightMarker>
                         <FadeAndSlideScrollTriggerAnimation className="w-full mt-4 leading-[1.9] text-body-light text-size2" >
                             Match‐Bondは、美容・飲食店・ストレス解消・結婚準備までカバーする4０社以上の婚活応援企業と独自に提携しています。
                             （会員様限定／特別価格で利用可能）
@@ -50,7 +50,8 @@ export const SupportSection = () => {
                             ・ 成婚退会後、結婚を具体的に考えたい
                             </span>
                             <span className="block mt-2">
-                            その時々の状況に合わせて、今のあなたに必要な場所・サービスをつなぎます。
+                            その時々の状況に合わせて、<br/>
+                            今のあなたに必要な場所・サービスをつなぎます。
                             </span>
                         </FadeAndSlideScrollTriggerAnimation>
                     </div>
@@ -60,7 +61,8 @@ export const SupportSection = () => {
                         <FadeAndSlideScrollTriggerAnimation className="w-full mt-4 leading-[1.9] text-body-light text-size2" >
                             Match‐Bondは、出会いを作るだけでは終わりません。
                             婚活中も、成婚退会後も、ひとりで抱え込まず前に進める仕組みを整えています。
-                            婚活にかかる金銭的・精神的な負担を少しでも軽くすることも、私たちの役割です。
+                            婚活にかかる金銭的・精神的な負担を少しでも軽くすることも、<br/>
+                            私たちの役割です。
                         </FadeAndSlideScrollTriggerAnimation>
                     </div>
 
@@ -79,7 +81,7 @@ export const SupportSection = () => {
                     </div>
 
                     <p className="text-body-muted text-size3 max-w-md leading-5">
-                        ※ お得なサービスはMatch-Bondの結婚相談所に入会した場合のみご利用頂けます。
+                        ※ お得なサービスは結婚相談所に入会した場合のみご利用頂けます。
                     </p>
                 </div>
 

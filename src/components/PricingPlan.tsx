@@ -11,7 +11,7 @@ interface PlanProps {
 }
 
 export const PricingPlan = ({ title, description, image, disableButton }: PlanProps) => (
-    <div className={`h-full bg-white p-7 rounded-2xl flex flex-col border border-sand/30 shadow-sm duration-300`}>
+    <div className={`h-full bg-white p-7 rounded-2xl flex flex-col border border-sand duration-300`}>
         <h2 className="text-title4 text-center text-primary font-medium">{title}</h2>
         <div className="heading-line mt-3 mb-4" />
         <p className="text-body-light !mb-auto text-center leading-[1.9] text-size2">{description}</p>

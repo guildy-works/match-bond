@@ -16,30 +16,24 @@ const services = [
         title: "恋愛コーチング",
         desc: "お客様の想いを明確にし、目標を設定。やるべき行動を一緒に考えます。",
     },
-    {
-        num: "03",
-        subtitle: "楽しみながら前向きに",
-        title: "恋愛タロット占い",
-        desc: "恋愛タロット占いで、未来を楽しく占いましょう。軽い気持ちでもOKです。",
-    },
 ];
 
 export const ConsultantsSection = () => {
     return (
-        <SectionType1 className="w-full bg-blush/30 py-10 md:py-20" innerClassName="flex flex-col items-center">
+        <SectionType1 className="w-full bg-blush/30 py-6 md:py-20" innerClassName="flex flex-col items-center">
             <TitleType ancher="consultants" title="恋愛・お悩み相談窓口" subTitle="Consultants" />
             <div className="heading-line mt-3" />
 
-            <FadeAndSlideScrollTriggerAnimation className="mx-auto mt-8 text-center leading-[1.9] max-w-lg text-body-light text-size2">
+            <FadeAndSlideScrollTriggerAnimation className="mx-auto mt-6 text-center leading-[1.9] max-w-lg text-body-light text-size2">
                 「婚活の前に、まず誰かに話したい」<br />
-                そんなあなたにも、Match-Bondは寄り添います。<br /><br />
+                そんなあなたにも、Match-Bondは寄り添います。<br />
                 恋愛・婚活・結婚後・夫婦関係・子育てまで、<br />
                 どんなお悩みもお受けしています。
             </FadeAndSlideScrollTriggerAnimation>
 
             {/* Free trial callout */}
-            <FadeAndSlideScrollTriggerAnimation className="mt-8">
-                <div className="inline-flex items-center gap-4 bg-white px-8 py-5 rounded-2xl border border-primary/20 shadow-sm">
+            <FadeAndSlideScrollTriggerAnimation className="mt-6">
+                <div className="inline-flex items-center gap-4 bg-white px-8 py-5 rounded-2xl border border-primary/50">
                     <div className="text-center">
                         <p className="text-[2rem] font-mincho font-bold text-primary leading-none">15分</p>
                         <p className="text-size3 text-body-muted mt-0.5">初回無料</p>
@@ -53,19 +47,19 @@ export const ConsultantsSection = () => {
             </FadeAndSlideScrollTriggerAnimation>
 
             {/* Service step cards */}
-            <div className="max-w-4xl mx-auto mt-10 w-full">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="max-w-4xl mx-auto mt-6 w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     {services.map((service, i) => (
                         <FadeAndSlideScrollTriggerAnimation key={service.num} delay={i * 0.04}>
-                            <div className="bg-white rounded-2xl border border-sand/30 p-7 shadow-sm flex flex-col gap-3 h-full">
+                            <div className="bg-white rounded-2xl border border-primary/30 p-7 flex flex-col h-full">
                                 <span className="font-asterdam text-gold/60 text-[1.4rem] tracking-wider">
                                     {service.num}
                                 </span>
                                 <div>
-                                    <p className="text-size3 text-primary font-medium">{service.subtitle}</p>
-                                    <h3 className="text-size1 text-body font-medium mt-1">{service.title}</h3>
+                                    <p className="text-size2 text-primary">{service.subtitle}</p>
+                                    <h3 className="text-title3 text-body text-primary">{service.title}</h3>
                                 </div>
-                                <p className="text-size2 text-body-muted leading-[1.9] mt-auto">{service.desc}</p>
+                                <p className="text-size2 text-body-muted leading-[1.9]">{service.desc}</p>
                             </div>
                         </FadeAndSlideScrollTriggerAnimation>
                     ))}

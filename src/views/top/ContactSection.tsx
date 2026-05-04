@@ -10,7 +10,7 @@ export const ContactSection = () => {
         <SectionType1 disableLine className="bg-blush/30 pt-0" innerClassName="items-center relative">
             <div id="contacts" className="absolute -top-32" />
 
-            <div className="bg-white p-8 md:p-16 md:px-32 w-full my-10 md:my-20 rounded-2xl shadow-sm border border-sand/30">
+            <div className="bg-white p-8 md:p-16 md:px-32 w-full my-10 md:my-20 rounded-2xl border border-sand">
                 <div className="text-center space-y-2 mb-8">
                     <p className="text-gold/50 font-asterdam text-[1.8rem] tracking-wider">Contact</p>
                     <h2 className="text-title2 font-mincho text-body">お問い合わせ</h2>

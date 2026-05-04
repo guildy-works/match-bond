@@ -55,7 +55,7 @@ export const Header = () => {
 
                             {item.childlen?.length && (
                                 <div className="absolute z-10 hidden top-8 group-hover:block w-max transition duration-300">
-                                    <div className="p-4 bg-white/95 backdrop-blur-md rounded-lg shadow-lg border border-sand/30 flex flex-col gap-2">
+                                    <div className="p-4 bg-white/95 backdrop-blur-md rounded-lg border border-sand flex flex-col gap-2">
                                         {item.childlen?.map((child, idx) => (
                                             <Link
                                                 key={idx}

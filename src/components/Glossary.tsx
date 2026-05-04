@@ -9,9 +9,9 @@ interface GlossaryItemProps {
 
 const GlossaryItem = ({ term, description, delay }: GlossaryItemProps) => {
     return (
-        <FadeAndSlideScrollTriggerAnimation delay={delay} className="text-center h-full p-4 bg-white rounded-xl border border-sand/20 shadow-sm">
-            <h2 className="text-size2 font-medium text-primary">{term}</h2>
-            <p className="text-body-muted mt-2 text-size3 leading-[1.9]">{description}</p>
+        <FadeAndSlideScrollTriggerAnimation delay={delay} className="text-center h-full p-4 bg-white rounded-xl border border-sand">
+            <h2 className="text-size1 font-bold text-primary">{term}</h2>
+            <p className="text-body-muted text-size3 leading-[1.9]">{description}</p>
         </FadeAndSlideScrollTriggerAnimation>
     );
 };
