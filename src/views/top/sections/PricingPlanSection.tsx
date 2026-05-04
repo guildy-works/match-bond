@@ -54,7 +54,8 @@ export const PricingPlanSection = () => {
                             お客様の想いから生まれた、3つのプラン
                         </HighlightMarker>
                         <p className="mt-3 text-size2 text-body-muted leading-[1.9]">
-                            婚活の進め方は人それぞれ。活動スタイルに合わせて選べるプランを用意しています。
+                            婚活の進め方は人それぞれ。<br className="md:hidden"/>
+                            活動スタイルに合わせて選べるプランを用意しています。
                         </p>
                     </FadeAndSlideScrollTriggerAnimation>
 

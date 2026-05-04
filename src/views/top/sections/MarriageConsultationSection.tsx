@@ -87,57 +87,55 @@ export const MarriageConsultationSection = () => {
                     <HighlightMarker className="text-title4 mx-auto">
                         全国ネットワークでお相手を探す
                     </HighlightMarker>
-                    <p className="mt-4 text-size2 text-body-muted leading-[1.9] max-w-lg mx-auto">
-                        JBA・コネクトシップ・IBJの3つのネットワークで、全国約10万人以上の中から
-                        あなたに合うお相手をご紹介します。
+                    <p className="mt-4 text-size2 text-body-muted  leading-[1.9] max-w-lg mx-auto">
+                        JBA・コネクトシップ・IBJの3つのネットワークで、<br />
+                        全国約10万人以上の中からあなたに合うお相手をご紹介します。
                     </p>
                 </FadeAndSlideScrollTriggerAnimation>
 
                 {/* JBA */}
-                <div className="bg-white w-full md:max-w-3xl mx-auto rounded-2xl border border-sand p-7 md:p-6 pl-0 mb-5">
-                    <div className="flex flex-col md:flex-row items-center pl-4">
-                        <div className="flex-shrink-0 flex justify-center">
-                            <FadeAndSlideScrollTriggerAnimation>
-                                <Image src={JBA} alt="JBA" className="w-full max-w-[180px]" />
-                            </FadeAndSlideScrollTriggerAnimation>
-                        </div>
-                        <div className="flex flex-col gap-3">
-                            <h3 className="text-title3 text-primary font-medium mx-auto text-center md:text-left">JBAについて</h3>
-                            <p className="text-size2 text-body-light leading-[1.9]">
-                                国内大手のJBA（日本結婚相談協会）に所属し、毎週火曜日にお見合い相手をご紹介。<br/>
-                                ノッツエ・BIU・良縁会の会員様も含め、全国約7万人（広島県・岡山県：約1,200人）からご紹介可能。<br/>
-                                4社の会員情報を一括で検索・やりとりできます。
-                            </p>
-                        </div>
+                <div className="bg-white w-full md:max-w-3xl mx-auto rounded-2xl border border-sand mb-5 flex flex-col md:flex-row items-center justify-center">
+                    <div className="flex-shrink-0 flex justify-center">
+                        <FadeAndSlideScrollTriggerAnimation>
+                            <Image src={JBA} alt="JBA" className="w-full max-w-[180px]" />
+                        </FadeAndSlideScrollTriggerAnimation>
+                    </div>
+                    <div className="flex flex-col gap-3 p-4 pt-0 md:pt-4">
+                        <h3 className="text-title3 text-primary font-medium mx-auto text-center md:text-left">JBAについて</h3>
+                        <p className="text-size2 text-body-light leading-[1.9]">
+                            国内大手のJBA（日本結婚相談協会）に所属し、<br />
+                            毎週火曜日にお見合い相手をご紹介。<br />
+                            ノッツエ・BIU・良縁会の会員様も含め、<br />
+                            全国約7万人（広島県・岡山県：約1,200人）からご紹介可能。<br />
+                            4社の会員情報を一括で検索・やりとりできます。
+                        </p>
                     </div>
                 </div>
 
                 {/* Connectship */}
-                <div className="bg-white w-full md:max-w-3xl mx-auto rounded-2xl border border-sand p-7 md:p-6 pl-0 mb-5">
-                    <div className="flex flex-col md:flex-row items-center pl-4">
-                        <div className="flex-shrink-0 flex justify-center">
-                            <FadeAndSlideScrollTriggerAnimation>
-                                <Image src={Connect} alt="コネクトシップ" className="w-full max-w-[160px]" />
-                            </FadeAndSlideScrollTriggerAnimation>
+                <div className="bg-white w-full md:max-w-3xl mx-auto rounded-2xl border border-sand mb-5 flex flex-col md:flex-row items-center justify-center">
+                    <div className="flex-shrink-0 flex justify-center">
+                        <FadeAndSlideScrollTriggerAnimation>
+                            <Image src={Connect} alt="コネクトシップ" className="w-full max-w-[160px] pt-4 " />
+                        </FadeAndSlideScrollTriggerAnimation>
+                    </div>
+                    <div className="flex flex-col gap-3 p-4 pt-0 md:pt-4">
+                        <div className="flex flex-col mx-auto">
+                            <span className="inline-block self-start mx-auto px-3 bg-sand/50 text-body-muted text-size3 rounded-full">
+                                オプション
+                            </span>
+                            <h3 className="text-title3 text-primary font-medium">コネクトシップ</h3>
                         </div>
-                        <div className="flex flex-col gap-3">
-                            <div className="flex flex-col gap-1 mx-auto md:text-left">
-                                <span className="inline-block self-start mx-auto px-3 py-0.5 bg-sand/50 text-body-muted text-size3 rounded-full">
-                                    オプション
-                                </span>
-                                <h3 className="text-title3 text-primary font-medium">コネクトシップ</h3>
-                            </div>
-                            <p className="text-size3 text-primary bg-primary-pale p-2 rounded-xl text-center mx-auto">
-                                登録費用55,000円<br/>
-                                月会費2,000円<br/>
-                                お見合い費1,000円
-                            </p>
-                            <p className="text-size2 text-body-light leading-[1.9]">
-                                他社13社の結婚相談所会員をご紹介。JBAと合わせると約10万人に。<br/>
-                                AIマッチングで毎週水曜日に新しいお相手をご紹介。<br/>
-                                お見合い状況・交際率など進捗を数値で可視化します。
-                            </p>
-                        </div>
+                        <p className="text-size3 text-primary bg-primary-pale p-2 rounded-xl text-center mx-auto">
+                            登録費用55,000円<br />
+                            月会費2,000円<br />
+                            お見合い費1,000円
+                        </p>
+                        <p className="text-size2 text-body-light leading-[1.9]">
+                            他社13社の結婚相談所会員をご紹介。JBAと合わせると約10万人に。<br />
+                            AIマッチングで毎週水曜日に新しいお相手をご紹介。<br />
+                            お見合い状況・交際率など進捗を数値で可視化します。
+                        </p>
                     </div>
                 </div>
             </div>
