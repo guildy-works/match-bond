@@ -173,14 +173,14 @@ export default function Home() {
             <div className="max-w-3xl mx-auto flex flex-col gap-4 p-8">
                 <h2 className="text-title3 text-color9 relative">
                     <div id="service1" className="absolute -top-40" />
-                    婚活中にお得なサービスが<br className="md:hidden" />受けれるお店
+                    婚活中にお得なサービスが<br />受けれるお店
                 </h2>
                 <p className="text-color9_2/80">※お得なサービスはMatch-Bondの結婚相談所に入会した場合のみご利用頂けます。</p>
                 <CsvTable data={data2} categories={categories2} />
 
                 <h2 className="mt-8 text-title3 text-color9 relative">
                     <div id="service2" className="absolute -top-40" />
-                    成婚退会後にお得なサービスが<br className="md:hidden" />受けれるお店
+                    成婚退会後にお得なサービスが<br  />受けれるお店
                 </h2>
                 <p className="text-color9_2/80">※お得なサービスはMatch-Bondの結婚相談所に入会した場合のみご利用頂けます。</p>
                 <CsvTable data={data} categories={categories} />
